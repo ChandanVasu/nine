@@ -75,7 +75,4 @@ function mytheme_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');
 
 
-function enqueue_custom_icon() {
-    wp_enqueue_script('custom-icon', get_template_directory_uri() . '/Assets/icon.svg', array(), '1.0', true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_icon');
+

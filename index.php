@@ -63,6 +63,27 @@
             <?php endwhile; ?>
         <?php endif; ?>
 
+        <?php
+    
+    // Pagination
+    global $wp_query;
+    if ($wp_query->max_num_pages > 1) :
+    ?>
+        <nav class="pagination">
+            <?php
+            $paginate_args = array(
+                'current'   => max(1, get_query_var('paged'), get_query_var('page')),
+                'total'     => $wp_query->max_num_pages,
+                'prev_next' => true,
+                'prev_text' => __('&#9664;', 'textdomain'), // Unicode for left arrow icon
+                'next_text' => __('&#9654;', 'textdomain'), // Unicode for right arrow icon
+            );
+
+            echo paginate_links($paginate_args);
+            ?>
+        </nav>
+    <?php endif; ?>
+
     </div>
 
     <div class='main-home-sidebar'>
