@@ -1,0 +1,265 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/poppins.medium.ttf') format('truetype');
+    /* You can also specify other font formats here */
+  }
+  
+
+  
+.comment-list {
+    list-style: none;
+    padding-left: 0; /* Optionally, remove any default padding */
+}
+
+.comment-content{
+    margin-bottom: 30px;
+}
+
+.comment-author{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0px;
+}
+
+.comment-author img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    object-fit: cover;
+    object-position: center;
+
+    
+}
+
+.comment-user-name, .comment-user-name a{
+    text-transform: uppercase;
+    color: black;
+    font-size: 15px;
+    font-family: 'Poppins';
+
+}
+
+.comment-meta a{
+    color: rgb(103, 103, 103);
+    font-size: 12px;
+    font-family: 'Poppins';
+
+}
+
+.comment-text p{
+    margin-left: 65px;
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: 'Poppins';
+
+}
+
+.reply {
+    margin-left: 65px;
+    margin-top: 20px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.comment .children{
+    list-style: none;
+    margin-left: 100px;
+}
+
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width:800px){
+    .comment .children{
+        list-style: none;
+        margin-left: 50px;
+    }
+}
+
+
+/* Style for the submit button */
+input[type="submit"] {
+    background-color: var(--primary-color); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  
+  /* Hover effect */
+  input[type="submit"]:hover {
+    background-color: #ff3434; /* Darker Green */
+  }
+  
+  /* Active effect */
+  input[type="submit"]:active {
+    background-color: #3e8e41; /* Even Darker Green */
+  }
+  
+  /* Target input type text */
+input[type="text"], input[type="email"] {
+    /* Your styles here */
+    width: 300px; /* Example width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Additional styles for when input is focused */
+input[type="text"]:focus {
+    outline: none; /* Removes default focus outline */
+    border-color: #007bff; /* Example focus color */
+}
+
+/* Target textarea */
+textarea {
+    /* Your styles here */
+    width: 100%; /* Example width */
+    height: 150px; /* Example height */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    resize: vertical; /* Allow horizontal resizing */
+
+}
+
+/* Additional styles for when textarea is focused */
+textarea:focus {
+    outline: none; /* Removes default focus outline */
+    border-color: #007bff; /* Example focus color */
+}
+
+
+.wp-caption, .wp-caption-text{
+    display: none;
+}
+
+/* WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+  }
+  
+  .aligncenter,
+  div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+  }
+  
+  .alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+  }
+  
+  .alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+  }
+  
+  a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+  }
+  
+  a img.alignnone {
+    margin: 5px 20px 20px 0;
+  }
+  
+  a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+  }
+  
+  a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+  }
+  
+  .wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+  }
+  
+  .wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+  }
+  
+  .wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+  }
+  
+  .wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+  }
+  
+  .wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+  }
+  
+  /* Text meant only for screen readers. */
+  .screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+  }
+  
+  .screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+  }

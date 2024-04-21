@@ -4,23 +4,41 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('Assets/Css/fonts/poppins.medium.ttf') format('truetype');
+    /* You can also specify other font formats here */
+  }
+
 :root {
     --primary: #ffffff;
     --primary-color: rgb(255, 0, 0);
     --secondary-color: #ffffff;
     --primary-text: #000000;
     --secondary-text: #232323;
+    --link-color: #270ee3;
 
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body{
+    background-color: #ffffff;
     transition: all 0.3s;
+    line-height: 1.5;
+    font-family: 'Poppins';
+    letter-spacing: 0.5px;
+
 }
 
 p{
-    margin: 10px 0px;
     line-height: 1.6;
+    
 }
+
+
 
 
 
@@ -40,7 +58,7 @@ p{
 
  a{
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--link-color);
 
  }
 
@@ -132,11 +150,12 @@ p{
 }
 
 .main-home-content-post-meta .author-avatar img{
-    width: 40px;
-    height: 40px;
-    border-radius: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
     object-fit: cover;
     object-position: center;
+    border: dotted 1px var(--primary-color);
 }
 
 .main-home-content-post-meta .author-and-date{
@@ -151,6 +170,8 @@ p{
     flex-direction: column;
     justify-content: space-around;
 }
+
+
 
 
 @media (max-width:800px){
@@ -248,11 +269,10 @@ p{
 }
 
 .single-one-post .post-thumbnail img{
-    height: 450px;
+    height: 400px;
     border-radius: 5px;
     background-color: #232323;
     display: block;
-    
 }
 
 .post-thumbnail{
@@ -276,6 +296,15 @@ p{
 
 }
 
+.single-one-post-thumbnail-inner .category a{
+    background-color: var(--primary-color);
+    color: #f0f0f0;
+    padding: 2px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
 .single-one-post-thumbnail-inner .post-meta{
     display: flex;
     gap: 10px;
@@ -284,17 +313,41 @@ p{
 .single-one-post-thumbnail-inner .post-meta .post-meta-inner{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
 }
 
-.single-one-post-thumbnail-inner .post-meta .author-avatar img{
+.single-one-post-thumbnail-inner .post-meta .author-avatar img {
     position: relative;
-    height: 40px ;
-    width: 40px;
-    border-radius: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
     object-fit: cover;
     object-position: center;
 }
+
+.author-name{
+    text-transform: uppercase;
+}
+
+.post-content{
+    margin-top: 30px;
+}
+
+.post-content p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.has-drop-cap:first-of-type:first-letter {
+    font-size: 80px;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+}
+
+.comments-section{
+margin-top: 30px;  }
+
 
 @media (max-width:800px){
 
