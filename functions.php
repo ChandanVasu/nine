@@ -10,12 +10,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 * ------------------------------------------------------------------------------
 */
 
-function enqueue_custom_styles() {
+function enqueue_custom_assets() {
+    // Enqueue CSS files
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/main.css');
+    wp_enqueue_style('editor-style', get_template_directory_uri() . '/style-editor.css');
     wp_enqueue_style('icon', get_template_directory_uri() . '/Assets/Css/icon.css');
 
+    // Enqueue JavaScript files
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/Js/main.js');
+
+    // If the script relies on jQuery, add 'jquery' to the array of dependencies
+    // wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/js/main.js', array('jquery'), false, true);
 }
-add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+add_action('wp_enqueue_scripts', 'enqueue_custom_assets');
 
 
 /*
@@ -84,56 +91,69 @@ add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');
 * Theme Setup
 * ------------------------------------------------------------------------------
 */
-if ( ! function_exists( 'atlas_theme_setup' ) ) {
-	function atlas_theme_setup() {
-		load_theme_textdomain( 'atlas', get_template_directory() . '/languages' );
-		if ( ! isset( $GLOBALS['content_width'] ) ) {
-			$GLOBALS['content_width'] = 1920;
-		}
-
-		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'title-tag' );
-		add_theme_support( 'responsive-embeds' );
-		add_theme_support( 'customize-selective-refresh-widgets' );
-		add_theme_support( 'editor-styles' );
-		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
-
-		register_nav_menus( array(
-			'main_menu'   => 'Main Menu',
-			'mobile_menu'   => 'Mobile Menu',
-		) );
 
 
-		add_theme_support( 'amp' );
+if ( ! function_exists( 'nine_theme' ) ) {
+    function nine_theme() {
+        load_theme_textdomain( 'nine', get_template_directory() . '/languages' );
+        if ( ! isset( $GLOBALS['content_width'] ) ) {
+            $GLOBALS['content_width'] = 1920;
+        }
 
-		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'placeholder-img', 30, 30, true );
-		set_post_thumbnail_size( 480, 0 );
+        add_theme_support( 'automatic-feed-links' );
+        add_theme_support( 'title-tag' );
+        add_theme_support( 'responsive-embeds' );
+        add_theme_support( 'customize-selective-refresh-widgets' );
+        add_theme_support( 'editor-styles' );
+        add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 
-		// Adds support for editor color palette.
-		add_theme_support( 'editor-color-palette', array(
+        register_nav_menus( array(
+            'main_menu'   => 'Main Menu',
+            'mobile_menu' => 'Mobile Menu',
+        ) );
+
+        add_theme_support( 'amp' );
+
+        add_theme_support( 'post-thumbnails' );
+        add_image_size( 'placeholder-img', 30, 30, true );
+        set_post_thumbnail_size( 480, 0 );
+
+        // Adds support for editor color palette.
+        add_theme_support( 'editor-color-palette', array(
             array(
-                'name'  => esc_html__( 'Accent', 'atlas' ),
+                'name'  => esc_html__( 'Accent', 'nine' ),
                 'slug'  => 'accent',
                 'color' => '#ff0000', // Replace with your desired color value
             ),
             array(
-                'name'  => esc_html__( 'Dark', 'atlas' ),
+                'name'  => esc_html__( 'Dark', 'nine' ),
                 'slug'  => 'dark',
                 'color' => '#000000', // Replace with your desired color value
             ),
             array(
-                'name'  => esc_html__( 'Light', 'atlas' ),
+                'name'  => esc_html__( 'Light', 'nine' ),
                 'slug'  => 'light',
                 'color' => '#ffffff', // Replace with your desired color value
             ),
         ) );
-        
+
         // Support only standard post format
-		add_theme_support( 'post-formats', array( 'standard' ) );
-	}
+        add_theme_support( 'post-formats', array( 'standard' ) );
+
+        // Add support for custom logo
+        add_theme_support( 'custom-logo', array(
+            'height'      => 100, // Adjust as needed
+            'width'       => 400, // Adjust as needed
+            'flex-height' => true,
+            'flex-width'  => true,
+            'header-text' => array( 'site-title', 'site-description' ), // Optional, to hide these elements when the logo is displayed
+        ) );
+    }
 }
-add_action( 'after_setup_theme', 'atlas_theme_setup', 1 );
+add_action( 'after_setup_theme', 'nine_theme', 1 );
+
+
+
 
 
 if( !class_exists('ReduxFramework')){

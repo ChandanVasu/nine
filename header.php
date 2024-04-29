@@ -9,11 +9,17 @@
  * @package xo
  */
 
+// Global Redux Framework options
+global $redux_global;
+
+// Retrieve the selected header template from Redux
+$selected_header = isset($redux_global['header_select']) ? $redux_global['header_select'] : 'header-one';
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
@@ -23,21 +29,27 @@
 
 <?php wp_body_open(); ?>
 
-<header id='main-header'>
-
-<h1>this is header</h1>
-
+<header id="main-header">
+    <?php
+    // Load the appropriate header template from the subdirectory
+    switch ($selected_header) {
+        case 'header-one':
+            get_template_part('template/header/header-one');
+            break;
+        case 'header-two':
+            get_template_part('template/header/header-two');
+            break;
+        case 'header-three':
+            get_template_part('template/header/header-three');
+            break;
+        default:
+            get_template_part('template/header/header-three'); // Fallback to 'header-one'
+            break;
+    }
+    ?>
 </header>
 
-<script>
-	if ( ! function_exists( 'theme_enqueue_scripts' ) ) {
-    function theme_enqueue_scripts() {
-        // Enqueue comment-reply script if comments are open and threaded comments are supported
-        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-            wp_enqueue_script( 'comment-reply' );
-        }
-    }
-    add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts' );
-}
 
+<script>
+    
 </script>

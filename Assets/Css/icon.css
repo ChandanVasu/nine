@@ -132,14 +132,15 @@ textarea {
     /* Your styles here */
     width: 100%; /* Example width */
     height: 150px; /* Example height */
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 20px 20px;
+    border: 0px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box; /* Ensures padding and border are included in width */
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #333;
     resize: vertical; /* Allow horizontal resizing */
+    background-color: beige;
 
 }
 

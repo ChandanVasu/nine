@@ -1,17 +1,16 @@
 <?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Your_Theme_Name
- */
+// Use the correct global variable
+global $redux_global;
 
+// Check if the variable is set, and get the footer text
+$footer_text = isset($redux_global['footer_text']) ? $redux_global['footer_text'] : __('All Rights Reserved.', 'nine-theme');
 ?>
+
+<!-- Display in the footer -->
 <footer>
-    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p>
+    <div class="footer-content">
+        <p><?php echo esc_html($footer_text); ?></p>
+    </div>
 </footer>
 
-<?php wp_footer(); ?>
+<!-- theme_get_option('footer_text'); -->
