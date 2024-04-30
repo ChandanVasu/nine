@@ -153,14 +153,12 @@ if ( ! function_exists( 'nine_theme' ) ) {
 add_action( 'after_setup_theme', 'nine_theme', 1 );
 
 
-
-
-
-if( !class_exists('ReduxFramework')){
-    require_once(dirname(__FILE__) . '/redux-core/framework.php');
-}
-
 if( !isset( $redux_demo ) ){
     require_once( dirname( __FILE__) . '/sample-config.php');
 }
+
+
+
+
+
 

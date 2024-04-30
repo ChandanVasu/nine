@@ -10,10 +10,10 @@
  */
 
 // Global Redux Framework options
-global $redux_global;
+global $nine_theme;
 
 // Retrieve the selected header template from Redux
-$selected_header = isset($redux_global['header_select']) ? $redux_global['header_select'] : 'header-one';
+$selected_header = isset($nine_theme['header_select']) ? $nine_theme['header_select'] : 'header-one';
 
 ?>
 <!doctype html>
@@ -49,7 +49,3 @@ $selected_header = isset($redux_global['header_select']) ? $redux_global['header
     ?>
 </header>
 
-
-<script>
-    
-</script>

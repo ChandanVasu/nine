@@ -88,7 +88,7 @@ input[type="submit"] {
     background-color: var(--primary-color); /* Green */
     border: none;
     color: white;
-    padding: 15px 15px;
+    padding: 10px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;

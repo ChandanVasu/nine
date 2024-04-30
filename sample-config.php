@@ -16,7 +16,7 @@ $args = array(
     'page_title' => 'Theme Settings',
     'admin_bar' => true,
     'admin_bar_icon' => 'dashicons-admin-generic',
-    'global_variable' => 'redux_global',
+    'global_variable' => 'nine_theme',
     'dev_mode' => false,
     'update_notice' => false,
     'customizer' => false,
@@ -63,6 +63,46 @@ Redux::setSection($opt_name, array(
         ),
     ),
 ));
+
+Redux::setSection($opt_name, array(
+    'title' => __('General Settings', 'nine-theme'),
+    'id' => 'general_settings',
+    'desc' => __('Settings related to the general appearance of the theme.', 'nine-theme'),
+    'icon' => 'el el-cogs',
+    'fields' => array(
+        array(
+            'id' => 'body_bg_color',
+            'type' => 'color',
+            'title' => esc_html__('Body Background Color', 'nine-theme'),
+            'default' => '#ffffff', // Default white background
+            'validate' => 'color',
+        ),
+        array(
+            'id' => 'primary_text',
+            'type' => 'color',
+            'title' => esc_html__('Primary Text Color', 'nine-theme'),
+            'default' => '#000000', // Default white background
+            'validate' => 'color',
+        ),
+        array(
+            'id' => 'link_color',
+            'type' => 'color',
+            'title' => esc_html__('Link Color', 'nine-theme'),
+            'default' => '#340DE5', // Default white background
+            'validate' => 'color',
+        ),
+
+        array(
+            'id' => 'primary_color',
+            'type' => 'color',
+            'title' => esc_html__('Primary Color', 'nine-theme'),
+            'default' => '#E50D0D', // Default white background
+            'validate' => 'color',
+        ),
+    ),
+));
+
+
 
 Redux::setSection($opt_name, array(
     'title' => __('Footer Settings', 'nine-theme'),

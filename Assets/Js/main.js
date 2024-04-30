@@ -1,24 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // const headerElement = document.getElementById('main-header');
-
-    // if (!headerElement) {
-    //     console.error("Element with ID 'main-header' not found.");
-    //     return;
-    // }
-
-    // const shadowStyle = 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px';
-    
-    // // Function to add or remove shadow based on scroll position
-    // function handleScroll() {
-    //     if (window.scrollY > 0) {
-    //         headerElement.style.boxShadow = shadowStyle;
-    //     } else {
-    //         headerElement.style.boxShadow = 'none';
-    //     }
-    // }
-
-    // // Add scroll event listener to trigger the function on scroll
-    // window.addEventListener('scroll', handleScroll);
 
 // Get the WordPress admin bar
 var adminBar = document.getElementById('wpadminbar');
@@ -34,3 +14,15 @@ adminBar.addEventListener('mouseleave', function() {
 });
 
 });
+
+(function ($) {
+    // Fetch the Redux color setting via PHP variable and set the body background color
+    $(document).ready(function () {
+        var bodyBgColor = "<?php echo esc_js($redux_options['body_bg_color']); ?>"; // Get Redux color
+
+        if (bodyBgColor) {
+            $('body').css('background-color', bodyBgColor); // Set the body background color
+        }
+    });
+})(jQuery);
+

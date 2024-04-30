@@ -8,6 +8,9 @@
     src: url('Assets/Css/fonts/poppins.medium.ttf') format('truetype');
    /* You can also specify other font formats here */
 }
+
+
+
 :root {
     --primary: #ffffff;
     --primary-color: rgb(255, 0, 0);
@@ -16,11 +19,13 @@
     --secondary-text: #232323;
     --link-color: #2515d4;
 }
+
+
 html {
     scroll-behavior: smooth;
 }
 body{
-    background-color: #ffffff77;
+    background-color: var(--primary);
     transition: all 0.3s;
     line-height: 1.5;
     font-family: 'Poppins';
@@ -38,6 +43,8 @@ a{
 }
 .title a, .title{
     color: var(--primary-text);
+    font-size: 25px;
+    line-height: 1.5;
 }
 .thumbnail img{
     width: 100%;
@@ -84,7 +91,7 @@ a{
     position: absolute;
     top: 0px;
     right: 0px;
-    background-color: rgba(159, 224, 182, 0.649);
+    background-color: var(--primary-color);
     padding-top: 5px;
     padding-right: 10px;
     padding-left: 20px;
@@ -160,8 +167,8 @@ a{
 }
 .pagination .page-numbers {
     display: inline-block;
-    margin: 0 4px;
-    padding: 6px 12px;
+    margin: 0 8px;
+    padding: 6px 18px;
     background-color: #f0f0f0;
    /* Background color of the pagination buttons */
     color: #333;
@@ -319,6 +326,11 @@ a{
     z-index: 9;
     top: 100px;
 }
+
+.widget{
+    margin-bottom: 50px;
+}
+
 /* ........................... 
 .............header-one 
 ........................... */
