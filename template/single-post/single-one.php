@@ -17,7 +17,7 @@
                   $author_avatar = get_avatar($author_id, 32); // Change 32 to the desired avatar size
                   ?>
                <span class="author-avatar">
-               <?php echo $author_avatar; ?>
+               <?php echo wp_kses_post($author_avatar); ?>
                </span>
                <div class='post-meta-inner'>
                   <p class="author-name">

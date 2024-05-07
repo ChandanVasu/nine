@@ -9,5 +9,6 @@ global $nine_theme;
     </div>
 </footer>
 
+<?php wp_footer(); ?>
 
 <!-- theme_get_option('footer_text'); -->

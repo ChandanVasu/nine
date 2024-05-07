@@ -77,8 +77,8 @@
                 'current'   => max(1, get_query_var('paged'), get_query_var('page')),
                 'total'     => $wp_query->max_num_pages,
                 'prev_next' => true,
-                'prev_text' => __('&#9664;', 'textdomain'), // Unicode for left arrow icon
-                'next_text' => __('&#9654;', 'textdomain'), // Unicode for right arrow icon
+                'prev_text' => __('&#9664;', 'nine-theme'), // Unicode for left arrow icon
+                'next_text' => __('&#9654;', 'nine-theme'), // Unicode for right arrow icon
             );
 
             echo paginate_links($paginate_args);

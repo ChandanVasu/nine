@@ -4,39 +4,49 @@ if (!class_exists('Redux')) {
     return;
 }
 
+$theme = wp_get_theme(); // For use with some settings. Not necessary.
+
 $opt_name = 'nine_theme';
 
 $args = array(
-    'opt_name' => $opt_name,
-    'display_name' => 'Theme Settings',
-    'display_version' => '1.0',
-    'menu_type' => 'menu',
-    'allow_sub_menu' => true,
-    'menu_title' => 'Theme Settings',
-    'page_title' => 'Theme Settings',
-    'admin_bar' => true,
-    'admin_bar_icon' => 'dashicons-admin-generic',
-    'global_variable' => 'nine_theme',
-    'dev_mode' => false,
-    'update_notice' => false,
-    'customizer' => false,
-    'page_parent' => 'themes.php',
-    'page_permissions' => 'manage_options',
-    'page_slug' => 'theme_settings',
-    'save_defaults' => true,
-    'default_show' => true,
-    'show_import_export' => true,
-    'output' => true,
-    'output_tag' => true,
-    'footer_credit' => '',
-    'use_cdn' => true,
-    'compiler' => true,
-    'compiler_timestamp' => true,
-    'disable_google_fonts_link' => false,
-    'customizer_only' => false,
-    'disable_save_warn' => false,
-    'ajax_save' => true,
-    'welcome_panel' => true,
+    'opt_name'                  => $opt_name,
+	'display_name'              => $theme->get( 'Name' ),
+	'display_version'           => $theme->get( 'Version' ),
+    'menu_type'                 => 'menu',
+    'allow_sub_menu'            => true,
+    'menu_title'                => esc_html__( 'Theme Options', 'nine-theme' ),
+    'page_title'                => esc_html__( 'Theme Options', 'nine-theme' ),
+    'google_api_key'            => '',
+    'google_update_weekly'      => false,
+    'async_typography'          => false,
+    'admin_bar'                 => true,
+    'admin_bar_icon'            => 'dashicons-admin-generic',
+    'menu_icon'                 => get_theme_file_uri('Assets/Images/opstion.svg'), // Custom SVG icon
+    'admin_bar_priority'        => 50,
+    'global_variable'           => 'nine_theme',
+    'dev_mode'                  => false,
+    'update_notice'             => false,
+    'customizer'                => true,
+    'page_priority'             => 2,
+    'page_parent'               => 'themes.php',
+    'page_permissions'          => 'manage_options',
+    'last_tab'                  => '',
+    'page_icon'                 => 'icon-themes',
+    'page_slug'                 => 'nine-options',
+    'show_options_object'       => false,
+    'save_defaults'             => true,
+    'default_show'              => false,
+    'default_mark'              => '',
+    'show_import_export'        => true,
+    'transient_time'            => 6400,
+    'use_cdn'                   => true,
+    'output'                    => true,
+    'output_tag'                => true,
+    'disable_tracking'          => true,
+    'database'                  => '',
+    'disable_google_fonts_link' => true,
+    'system_info'               => false,
+    'search'                    => true,
 );
 
 Redux::setArgs($opt_name, $args);
@@ -61,6 +71,7 @@ Redux::setSection($opt_name, array(
             ),
             'default' => 'header-one', // Default option
         ),
+
     ),
 ));
 
@@ -116,6 +127,14 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Footer Text', 'nine-theme'),
             'desc' => esc_html__('Custom footer text', 'nine-theme'),
             'default' => esc_html__('All Rights Reserved.', 'nine-theme'),
+        ),
+
+        array(
+            'id' => 'header_template_code',
+            'type' => 'text',
+            'title' => esc_html__('Header Template', 'nine-theme'),
+            'desc' => esc_html__('Custom Header Template', 'nine-theme'),
+            //'default' => esc_html__('All Rights Reserved.', 'nine-theme'),
         ),
        
     ),

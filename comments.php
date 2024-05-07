@@ -12,15 +12,15 @@ if (post_password_required()) {
             <?php
             $comments_number = get_comments_number();
             if ('1' === $comments_number) {
-                echo esc_html__('1 Reply', 'yourthemename');
+                echo esc_html__('1 Reply', 'nine-theme');
             } else {
                 printf(
                     esc_html(_n(
                         '%1$s Comments',
                         '%1$s Comments',
                         $comments_number,
-                        'comments title',
-                        'yourthemename'
+                        'nine-theme',
+                        'nine-theme'
                     )),
                     number_format_i18n($comments_number)
                 );
@@ -48,7 +48,7 @@ if (post_password_required()) {
         // If comments are closed and there are comments, let's leave a little note, shall we?
         if (!comments_open()) :
         ?>
-            <p class="no-comments"><?php esc_html_e('Comments are closed.', 'yourthemename'); ?></p>
+            <p class="no-comments"><?php esc_html_e('Comments are closed.', 'nine-theme'); ?></p>
         <?php endif; ?>
 
     <?php endif; // Check for have_comments(). ?>
@@ -61,14 +61,14 @@ if (post_password_required()) {
         'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
         'title_reply_after'  => '</h2>',
         'comment_field' => '<p class="comment-form-comment">' .
-                '<textarea id="comment" name="comment" placeholder="' . esc_attr__('Your Comment', 'domainname') . '" cols="45" rows="8" aria-required="true"></textarea>' .
+                '<textarea id="comment" name="comment" placeholder="' . esc_attr__('Your Comment', 'nine-theme') . '" cols="45" rows="8" aria-required="true"></textarea>' .
                 '</p>',
         'fields' => array(
             'author' => '<p class="comment-form-author">' .
-                '<input id="author" name="author" type="text" placeholder="' . esc_attr__('Name', 'domainname') . '" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />' .
+                '<input id="author" name="author" type="text" placeholder="' . esc_attr__('Name', 'nine-theme') . '" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />' .
                 '</p>',
             'email'  => '<p class="comment-form-email">' .
-                '<input id="email" name="email" type="email" placeholder="' . esc_attr__('Email', 'domainname') . '" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />' .
+                '<input id="email" name="email" type="email" placeholder="' . esc_attr__('Email', 'nine-theme') . '" value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' />' .
                 '</p>',
             'cookies' => '',
         ),
@@ -93,10 +93,10 @@ function custom_comment_output($comment, $args, $depth)
                         <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
                             <?php printf('%1$s at %2$s', get_comment_date(), get_comment_time()); ?>
                         </a>
-                        <?php edit_comment_link(__('(Edit)', 'yourthemename'), '  ', ''); ?>
+                        <?php edit_comment_link(__('(Edit)', 'nine-theme'), '  ', ''); ?>
                     </div>
                     <?php if ($comment->comment_approved == '0') : ?>
-                        <p class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'yourthemename'); ?></p>
+                        <p class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'nine-theme'); ?></p>
                         <br />
                     <?php endif; ?>
                 </div>
