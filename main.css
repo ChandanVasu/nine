@@ -12,7 +12,7 @@
  
  
  :root {
-    --primary: #ffffff;
+    --body-background-color: #ffffff;
     --primary-color: rgb(255, 0, 0);
     --secondary-color: #ffffff;
     --primary-text: #000000;
@@ -26,7 +26,7 @@
  }
  
  body {
-    background-color: var(--primary);
+    background-color: var(--body-background-color);
     transition: all 0.3s;
     line-height: 1.5;
     font-family: 'Poppins';
@@ -77,7 +77,7 @@
  }
  
  .main-home-content-post {
-    background-color: var(--primary);
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -151,6 +151,8 @@
     justify-content: space-around;
  }
  
+
+
  @media (max-width:800px) {
     .main-home {
        margin: 10px 10px;
@@ -158,6 +160,8 @@
        display: flex;
        flex-direction: column;
     }
+
+
  
     .main-home-content {
        width: 100%;
@@ -173,11 +177,15 @@
     }
  }
  
- @media (max-width:1100px) {
+ @media (max-width:1300px) {
     .main-home {
        margin: 10px 10px;
        padding: 5px;
        display: flex;
+    }
+
+    .site-header-one{
+      padding: 0px 10px !important;
     }
  }
  
@@ -238,7 +246,7 @@
  
  .single-one-post-content {
     width: 65%;
-    background-color: var(--primary);
+    background-color:  var( --body-background-color);
     padding: 20px;
     border-radius: 20px;
     /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -389,6 +397,10 @@
  .site-header-one {
     padding: 0px 200px;
  }
+
+ .site-title{
+   margin: 0;
+ }
  
  .site-header-one .container {
     display: flex;
@@ -430,3 +442,13 @@
         display: none;
      }
  }
+
+
+ /* General styling for all video format posts */
+.format-video {
+   /* This class is applied to posts with the 'video' format */
+   background-color: #f5f5f5; /* light background for contrast */
+   padding: 20px;            /* add some padding for spacing */
+   border: 1px solid #ddd;   /* light border for separation */
+   border-radius: 5px;       /* slight rounding for a smoother appearance */
+}

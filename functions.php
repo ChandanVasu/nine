@@ -109,7 +109,7 @@ if ( ! function_exists( 'nine_theme' ) ) {
 
         register_nav_menus( array(
             'main_menu'   => 'Main Menu',
-            'mobile_menu' => 'Mobile Menu',
+            // 'mobile_menu' => 'Mobile Menu',
         ) );
 
         add_theme_support( 'amp' );
@@ -138,7 +138,7 @@ if ( ! function_exists( 'nine_theme' ) ) {
         ) );
 
         // Support only standard post format
-        add_theme_support( 'post-formats', array( 'standard' ) );
+        add_theme_support( 'post-formats', array( 'standard','video' ) );
 
         // Add support for custom logo
         add_theme_support( 'custom-logo', array(
@@ -154,8 +154,54 @@ add_action( 'after_setup_theme', 'nine_theme', 1 );
 
 
 if( !isset( $redux_demo ) ){
-    require_once( dirname( __FILE__) . '/sample-config.php');
+    require_once( dirname( __FILE__) . '/inc/admin/sample-config.php');
+    require_once( dirname( __FILE__) . '/inc/admin/meta-box.php');
 }
 
 require_once get_template_directory() . '/inc/admin/tgm/required-plugins.php';
+
+
+
+
+
+if ( ! function_exists( 'th90_styles_elementor' ) ) {
+
+	function th90_styles_elementor() {
+		if ( ! class_exists( 'Elementor\Plugin' ) ) {
+            return;
+        }
+
+        if ( class_exists( '\Elementor\Plugin' ) ) {
+            $elementor = \Elementor\Plugin::instance();
+            $elementor->frontend->enqueue_styles();
+        }
+
+        if ( class_exists( '\ElementorPro\Plugin' ) ) {
+            $elementor_pro = \ElementorPro\Plugin::instance();
+            $elementor_pro->enqueue_styles();
+        }
+        $nine_theme = get_option("nine_theme");
+
+		$template_ids = array_unique( array(
+            $nine_theme["header_template"]
+        ) );
+
+		if ( ! empty( $template_ids ) ) {
+			foreach ( $template_ids as $template_id ) {
+	            if( $template_id ) {
+	                if ( class_exists( '\Elementor\Core\Files\CSS\Post' ) ) {
+	                    $css_file = new \Elementor\Core\Files\CSS\Post( $template_id );
+	                } elseif ( class_exists( '\Elementor\Post_CSS_File' ) ) {
+	                    $css_file = new \Elementor\Post_CSS_File( $template_id );
+	                }
+
+	                $css_file->enqueue();
+	            }
+	        }
+		}
+	}
+}
+add_action( 'wp_enqueue_scripts', 'th90_styles_elementor' );
+
+
 

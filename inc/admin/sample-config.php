@@ -60,10 +60,22 @@ Redux::setSection($opt_name, array(
     'desc' => __('Settings related to the theme Header.', 'nine-theme'),
     'icon' => 'el el-star-alt',
     'fields' => array(
+
+        array(
+			'id'       => 'header_template',
+			'type'     => 'select',
+			'title'    => esc_html__('Custom Header template', 'nine-theme'),
+			'subtitle' => esc_html__('Select the template to show in Header.', 'nine-theme'),
+			'desc'	=> sprintf( esc_html__( 'You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme' ), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>' ),
+			'options'  => nine_get_posts_id( 'nine_theme' ),
+			'placeholder'  => esc_html__('Select block', 'nine-theme'),
+		),
+
         array(
             'id' => 'header_select',
             'type' => 'select',
             'title' => esc_html__('Header', 'nine-theme'),
+            'subtitle' => esc_html__('This All Header Is All Ready Have Theme , If You Want Craete New Header Plese Select Custom Header', 'nine-theme'),
             'options' => array(
                 'header-one' => esc_html__('Header One', 'nine-theme'),
                 'header-two' => esc_html__('Header Two', 'nine-theme'),
@@ -75,13 +87,49 @@ Redux::setSection($opt_name, array(
     ),
 ));
 
+
+
 Redux::setSection($opt_name, array(
-    'title' => __('General Settings', 'nine-theme'),
-    'id' => 'general_settings',
+    'title' => __('Footer Settings', 'nine-theme'),
+    'id' => 'footer_settings',
+    'desc' => __('Settings related to the theme footer.', 'nine-theme'),
+    'icon' => 'el el-arrow-down',
+    'fields' => array(
+
+        array(
+			'id'       => 'footer_template',
+			'type'     => 'select',
+			'title'    => esc_html__('Top template', 'nine-theme'),
+			'subtitle' => esc_html__('Select the template to show in top of the post. Usually for showing advertisement and others...', 'nine-theme'),
+			'desc'	=> sprintf( esc_html__( 'You can create the custom template from %1$sblock builder%2$s.', 'nine-theme' ), '<a target="_blank" href="' . admin_url('edit.php?post_type=th90_block') . '"><strong>', '</strong></a>' ),
+			'options'  => nine_get_posts_id( 'nine_theme' ),
+			'placeholder'  => esc_html__('Select block', 'nine-theme'),
+		),
+        
+        array(
+            'id' => 'footer_text',
+            'type' => 'text',
+            'title' => esc_html__('Footer Text', 'nine-theme'),
+            'desc' => esc_html__('Custom footer text', 'nine-theme'),
+            'default' => esc_html__('All Rights Reserved.', 'nine-theme'),
+            'hint'     => array(
+                        'content' => 'This Text Show At Footer If You Are Not create Custon Footer Then you change Footer Text.',)
+        ),
+       
+    ),
+));
+
+
+
+Redux::setSection($opt_name, array(
+    'title' => __('Typography Settings', 'nine-theme'),
+    'id' => 'Typography_settings',
     'desc' => __('Settings related to the general appearance of the theme.', 'nine-theme'),
     'icon' => 'el el-cogs',
+    // 'subsection' => true,
+
     'fields' => array(
-        array(
+         array(
             'id' => 'body_bg_color',
             'type' => 'color',
             'title' => esc_html__('Body Background Color', 'nine-theme'),
@@ -104,38 +152,41 @@ Redux::setSection($opt_name, array(
         ),
 
         array(
-            'id' => 'primary_color',
+            'id' => 'primary_colors',
             'type' => 'color',
             'title' => esc_html__('Primary Color', 'nine-theme'),
             'default' => '#E50D0D', // Default white background
             'validate' => 'color',
         ),
+        array( 
+            
+                'id'          => 'opt-typography',
+                'type'        => 'typography', 
+                'title'       => esc_html__('Typography', 'nine-theme'),
+                'google'      => true, 
+                'font-backup' => true,
+                'output'      => array('.title a'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Typography option with each property can be called individually.', 'nine-theme'),
+                'default'     => array(
+                    'color'       => '#333', 
+                    'font-style'  => '700', 
+                    'font-family' => 'poppins', 
+                    'google'      => true,
+                    'font-size'   => '', 
+                    'line-height' => ''
+
+            
+        ),
+    ),
+
+    array(
+            'id' => 'custom_css_code',
+            'title' => __( 'Custom Css Style' , 'nine-theme' ),
+            'type' => 'ace_editor',
+            'theme' => 'chrome',
+            'mode' => 'css',
+    )
     ),
 ));
 
-
-
-Redux::setSection($opt_name, array(
-    'title' => __('Footer Settings', 'nine-theme'),
-    'id' => 'footer_settings',
-    'desc' => __('Settings related to the theme footer.', 'nine-theme'),
-    'icon' => 'el el-arrow-down',
-    'fields' => array(
-        array(
-            'id' => 'footer_text',
-            'type' => 'text',
-            'title' => esc_html__('Footer Text', 'nine-theme'),
-            'desc' => esc_html__('Custom footer text', 'nine-theme'),
-            'default' => esc_html__('All Rights Reserved.', 'nine-theme'),
-        ),
-
-        array(
-            'id' => 'header_template_code',
-            'type' => 'text',
-            'title' => esc_html__('Header Template', 'nine-theme'),
-            'desc' => esc_html__('Custom Header Template', 'nine-theme'),
-            //'default' => esc_html__('All Rights Reserved.', 'nine-theme'),
-        ),
-       
-    ),
-));

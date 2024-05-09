@@ -6,7 +6,10 @@
         <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
 
-        <div class="main-home-content-post <?php if (is_sticky()) echo 'sticky'; ?>">
+         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+
+        <div class="main-home-content-post " >
 
             <?php if (has_post_thumbnail()) : ?>
             <div class="main-home-content-post-thumbnail thumbnail">
@@ -61,6 +64,8 @@
 
 
         </div>
+
+            </div>
 
         <?php endwhile; ?>
         <?php endif; ?>
