@@ -153,20 +153,22 @@ if ( ! function_exists( 'nine_theme' ) ) {
 add_action( 'after_setup_theme', 'nine_theme', 1 );
 
 
-if( !isset( $redux_demo ) ){
-    require_once( dirname( __FILE__) . '/inc/admin/sample-config.php');
-    require_once( dirname( __FILE__) . '/inc/admin/meta-box.php');
-}
+
 
 require_once get_template_directory() . '/inc/admin/tgm/required-plugins.php';
 
 
+if (function_exists('nine_core_activate')) {
+    require_once(dirname(__FILE__) . '/inc/admin/sample-config.php');
+    require_once(dirname(__FILE__) . '/inc/admin/meta-box.php');
+}
 
 
 
-if ( ! function_exists( 'th90_styles_elementor' ) ) {
 
-	function th90_styles_elementor() {
+if ( ! function_exists( 'nine_styles_elementor' ) ) {
+
+	function nine_styles_elementor() {
 		if ( ! class_exists( 'Elementor\Plugin' ) ) {
             return;
         }
@@ -201,7 +203,7 @@ if ( ! function_exists( 'th90_styles_elementor' ) ) {
 		}
 	}
 }
-add_action( 'wp_enqueue_scripts', 'th90_styles_elementor' );
+add_action( 'wp_enqueue_scripts', 'nine_styles_elementor' );
 
 
 

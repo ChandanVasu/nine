@@ -232,6 +232,8 @@
  .................................. */
  .footer-content {
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
  }
  
  /* .......................................
@@ -347,6 +349,12 @@
  .comments-section {
     margin-top: 30px;
  }
+
+ .bypostauthor .comment-user-name::before{
+   content: "Author - ";
+   color: var(--primary-color);
+   font-size: 12px;
+ }
  
  @media (max-width:800px) {
     .single-one-post {
@@ -444,11 +452,3 @@
  }
 
 
- /* General styling for all video format posts */
-.format-video {
-   /* This class is applied to posts with the 'video' format */
-   background-color: #f5f5f5; /* light background for contrast */
-   padding: 20px;            /* add some padding for spacing */
-   border: 1px solid #ddd;   /* light border for separation */
-   border-radius: 5px;       /* slight rounding for a smoother appearance */
-}

@@ -16,14 +16,14 @@ if (post_password_required()) {
             } else {
                 printf(
                     esc_html(_n(
-                        '%1$s Comments',
-                        '%1$s Comments',
-                        $comments_number,
-                        'nine-theme',
-                        'nine-theme'
+                        '%1$s Comment',  // Singular form
+                        '%1$s Comments',  // Plural form
+                        $comments_number,  // Number to determine singular/plural
+                        'nine-theme'  // Text domain for translation
                     )),
                     number_format_i18n($comments_number)
                 );
+                
             }
             ?>
         </h2><!-- .comments-title -->

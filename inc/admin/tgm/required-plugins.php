@@ -11,7 +11,7 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.6.1 for parent theme PaperXfor publication on ThemeForest
+ * @version    2.6.1 for parent theme nine-themefor publication on ThemeForest
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
@@ -59,36 +59,36 @@ function nine_theme_register_required_plugins() {
             'required'     => true,
             'external_url' => 'https://wordpress.org/plugins/elementor/',
         ),
-		array(
-			'name'               => esc_html__('Envato Market', 'paperx'),
-			'slug'               => 'envato-market',
-			'source'             => esc_url( 'https://goo.gl/pkJS33' ),
-            'external_url'       => esc_url( 'https://goo.gl/pkJS33' ),
-			'required'           => true,
-		), 
-		array(
-            'name'     => esc_html__('One User Avatar | User Profile Picture', 'paperx'),
-            'slug'     => 'one-user-avatar',
-            'required' => true,
-        ),
-		array(
-			'name'         => 'Contact Form 7',
-			'slug'         => 'contact-form-7',
-			'required'     => false,
-			'external_url' => 'http://wordpress.org/plugins/contact-form-7',
-		),
-        array(
-			'name'         => 'Svg Support',
-			'slug'         => 'svg-support',
-			'required'     => false,
-			'external_url' => 'https://wordpress.org/plugins/svg-support/',
-		),
-		array(
-			'name'         => 'One Click Demo Import',
-			'slug'         => 'one-click-demo-import',
-			'required'     => True,
-			'external_url' => 'https://wordpress.org/plugins/one-click-demo-import',
-		),
+		// array(
+		// 	'name'               => esc_html__('Envato Market', 'nine-theme'),
+		// 	'slug'               => 'envato-market',
+		// 	'source'             => esc_url( 'https://goo.gl/pkJS33' ),
+        //     'external_url'       => esc_url( 'https://goo.gl/pkJS33' ),
+		// 	'required'           => true,
+		// ), 
+		// array(
+        //     'name'     => esc_html__('One User Avatar | User Profile Picture', 'nine-theme'),
+        //     'slug'     => 'one-user-avatar',
+        //     'required' => true,
+        // ),
+		// array(
+		// 	'name'         => 'Contact Form 7',
+		// 	'slug'         => 'contact-form-7',
+		// 	'required'     => false,
+		// 	'external_url' => 'http://wordpress.org/plugins/contact-form-7',
+		// ),
+        // array(
+		// 	'name'         => 'Svg Support',
+		// 	'slug'         => 'svg-support',
+		// 	'required'     => false,
+		// 	'external_url' => 'https://wordpress.org/plugins/svg-support/',
+		// ),
+		// array(
+		// 	'name'         => 'One Click Demo Import',
+		// 	'slug'         => 'one-click-demo-import',
+		// 	'required'     => True,
+		// 	'external_url' => 'https://wordpress.org/plugins/one-click-demo-import',
+		// ),
 
 	);
 
@@ -102,7 +102,7 @@ function nine_theme_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'paperx',
+		'id'           => 'nine-theme',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,
