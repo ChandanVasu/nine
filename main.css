@@ -19,6 +19,9 @@
     --secondary-text: #232323;
     --link-color: #2515d4;
  }
+
+
+
  
  
  html {
@@ -328,6 +331,7 @@
  .author-name,
  .post-date {
     color: var(--secondary-color);
+    margin-bottom: 0;
  }
  
  .post-content {
@@ -396,7 +400,7 @@
  }
  
  .widget {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
  }
  
  /* ........................... 

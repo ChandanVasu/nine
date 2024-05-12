@@ -26,7 +26,7 @@
 
                 <div class="main-home-content-excerpt excerpt">
                     <?php echo wp_trim_words(get_the_content(), 30); ?>
-                    <a href="<?php the_permalink(); ?>" class="vt-read-more">Read More</a>
+                    <a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
                     <!-- Added Read More button -->
                 </div>
             </div>

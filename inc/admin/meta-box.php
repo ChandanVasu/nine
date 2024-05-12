@@ -5,19 +5,19 @@ function custom_metabox_example() {
 
     $cmb = new_cmb2_box( array(
         'id'           => $prefix . 'metabox',
-        'title'        => __( 'Custom Metabox', 'cmb2' ),
+        'title'        => __( 'Custom Metabox', 'nine-theme' ),
         'object_types' => array( 'post' ), // Post type(s) where the metabox will be displayed
     ) );
 
     // Add fields to the metabox
     $cmb->add_field( array(
-        'name' => __( 'Field 1', 'cmb2' ),
+        'name' => __( 'Field 1', 'nine-theme' ),
         'id'   => $prefix . 'field1',
         'type' => 'text',
     ) );
 
     $cmb->add_field( array(
-        'name' => __( 'Field 2', 'cmb2' ),
+        'name' => __( 'Field 2', 'nine-theme' ),
         'id'   => $prefix . 'field2',
         'type' => 'textarea',
     ) );

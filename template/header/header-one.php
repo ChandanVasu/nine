@@ -24,10 +24,10 @@
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'main_menu', // Using a different menu location
-                'menu_id'        => 'main_menu',
+                'menu_id'        => 'nav-main',
                 'container'      => 'div',
                 'container_class'=> 'menu-container-one',
-                'menu_class'     => 'menu-one',
+                'menu_class'     => 'nav-main',
                 'fallback_cb'    => false,
             ));
             ?>
