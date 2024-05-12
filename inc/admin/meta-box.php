@@ -1,57 +1,38 @@
 <?php
 
-add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
-/**
- * Define the metabox and field configurations.
- */
-function cmb2_sample_metaboxes() {
+function custom_metabox_example() {
+    $prefix = 'custom_metabox_';
 
-	/**assqa
-	 * Initiate the metabox
-	 */
-	$cmb = new_cmb2_box( array(
-		'id'            => 'test_metabox',
-		'title'         => __( 'Test Metabox', 'cmb2' ),
-		'object_types'  => array( 'post', ), // Post type
-		'context'       => 'normal',
-		'priority'      => 'high',
-		'show_names'    => true, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		// 'closed'     => true, // Keep the metabox closed by default
-	) );
+    $cmb = new_cmb2_box( array(
+        'id'           => $prefix . 'metabox',
+        'title'        => __( 'Custom Metabox', 'cmb2' ),
+        'object_types' => array( 'post' ), // Post type(s) where the metabox will be displayed
+    ) );
 
-	// Regular text field
-	$cmb->add_field( array(
-		'name'       => __( 'Test Text', 'cmb2' ),
-		'desc'       => __( 'field description (optional)', 'cmb2' ),
-		'id'         => 'yourprefix_text',
-		'type'       => 'text',
-		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-		// 'on_front'        => false, // Optionally designate a field to wp-admin only
-		// 'repeatable'      => true,
-	) );
+    // Add fields to the metabox
+    $cmb->add_field( array(
+        'name' => __( 'Field 1', 'cmb2' ),
+        'id'   => $prefix . 'field1',
+        'type' => 'text',
+    ) );
 
-	// URL text field
-	$cmb->add_field( array(
-		'name' => __( 'Website URL', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_url',
-		'type' => 'text_url',
-		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-		// 'repeatable' => true,
-	) );
+    $cmb->add_field( array(
+        'name' => __( 'Field 2', 'cmb2' ),
+        'id'   => $prefix . 'field2',
+        'type' => 'textarea',
+    ) );
 
-	// Email text field
-	$cmb->add_field( array(
-		'name' => __( 'Test Text Email', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => 'yourprefix_email',
-		'type' => 'text_email',
-		// 'repeatable' => true,
-	) );
-
-	// Add other metaboxes as needed
-
+    // Add more fields as needed
 }
+add_action( 'cmb2_admin_init', 'custom_metabox_example' );
+
+
+function km_disable_cmb2_front_end_styles( $enabled ) {
+
+	if ( ! is_admin() ) {
+		$enabled = false;
+	}
+
+	return $enabled;
+}
+add_filter( 'cmb2_enqueue_css', 'km_disable_cmb2_front_end_styles' );

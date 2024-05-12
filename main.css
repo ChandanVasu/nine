@@ -232,8 +232,8 @@
  .................................. */
  .footer-content {
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding: 10px;
+    background-color: rgba(190, 227, 255, 0.182);
  }
  
  /* .......................................
