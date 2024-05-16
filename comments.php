@@ -81,33 +81,33 @@ if (post_password_required()) {
 // Custom callback function to display each comment with a custom class
 function custom_comment_output($comment, $args, $depth)
 {
-    $GLOBALS['comment'] = $comment;
+    $GLOBALS['comment-nine'] = $comment;
     ?>
-    <li <?php comment_class('custom-comment-class'); ?> id="comment-<?php comment_ID(); ?>">
-        <div class="comment-content">
-            <div class="comment-author vcard">
+    <li <?php comment_class('comment-class-nine'); ?> id="comment-<?php comment_ID(); ?>">
+        <div class="comment-content-nine">
+            <div class="comment-author-nine vcard-nine">
                 <?php echo get_avatar($comment, 48); ?>
-                <div>
-                    <p class="comment-user-name"><?php echo get_comment_author_link(); ?></p>
-                    <div class="comment-meta commentmetadata">
+                <div class='comment-name-and-date-metabox-nine'>
+                    <p class="comment-user-name-nine"><?php echo get_comment_author_link(); ?></p>
+                    <div class="comment-meta-nine commentmetadata-nine">
                         <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
                             <?php printf('%1$s at %2$s', get_comment_date(), get_comment_time()); ?>
                         </a>
                         <?php edit_comment_link(__('(Edit)', 'nine-theme'), '  ', ''); ?>
                     </div>
                     <?php if ($comment->comment_approved == '0') : ?>
-                        <p class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.', 'nine-theme'); ?></p>
+                        <p class="comment-awaiting-moderation-nine"><?php esc_html_e('Your comment is awaiting moderation.', 'nine-theme'); ?></p>
                         <br />
                     <?php endif; ?>
                 </div>
             </div>
 
 
-            <div class="comment-text">
+            <div class="comment-text-nine">
                 <?php comment_text(); ?>
             </div>
 
-            <div class="reply">
+            <div class="reply-nine">
                 <?php
                 comment_reply_link(array_merge($args, array(
                     'depth'     => $depth,

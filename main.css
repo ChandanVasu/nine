@@ -13,11 +13,10 @@
  
  :root {
     --body-background-color: #ffffff;
-    --primary-color: rgb(255, 0, 0);
     --secondary-color: #ffffff;
     --primary-text: #000000;
-    --secondary-text: #232323;
-    --link-color: #2515d4;
+    --header-background-color: #ffffff;
+    --box-color: #ffffff;
  }
 
 
@@ -80,7 +79,7 @@
  }
  
  .main-home-content-post {
-    background-color: var(--secondary-color);
+    background-color: var(--box-color);
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -226,7 +225,7 @@
  
  .pagination .current {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--primary-text-color);
     /* Text color of the current page button */
  }
  
@@ -251,9 +250,9 @@
  
  .single-one-post-content {
     width: 65%;
-    background-color:  var( --body-background-color);
+    background-color:  var(--box-color);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
      */
  }
@@ -401,6 +400,9 @@
  
  .widget {
     margin-bottom: 20px;
+    background-color: var(--box-color);
+    padding: 20px;
+    border-radius: 10px;
  }
  
  /* ........................... 
@@ -437,7 +439,7 @@
  }
  
  #main-header {
-    background-color: #ffffff;
+    background-color: var(--header-background-color);
     position: sticky;
     top: 0;
     z-index: 999999;
