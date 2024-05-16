@@ -31,7 +31,7 @@ get_header();
 
                     // Link pages
                     wp_link_pages(array(
-                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'your-theme-name'),
+                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'nine-theme'),
                         'after'  => '</div>',
                     ));
                 endwhile; // End of the loop.

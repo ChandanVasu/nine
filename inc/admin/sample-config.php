@@ -51,14 +51,43 @@ $args = array(
 
 Redux::setArgs($opt_name, $args);
 
-// Add a new section for the footer settings
+
+function new_icon_font() {
+    // Uncomment this to remove elusive icon from the panel completely
+    //wp_deregister_style( 'redux-elusive-icon' );
+    //wp_deregister_style( 'redux-elusive-icon-ie7' );
+
+    wp_register_style(
+        'redux-font-awesome',
+        '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css',
+        array(),
+        time(),
+        'all'
+    );  
+    wp_enqueue_style( 'redux-font-awesome' );
+}
+add_action( 'redux/page/' . $opt_name . '/enqueue', 'new_icon_font' );
+
+
+function add_panel_css() {
+    wp_register_style(
+        'redux-custom-css',
+        get_template_directory_uri() . '/Assets/Css/admin.css',
+        array( 'redux-admin-css' ), // Be sure to include redux-admin-css so it's appended after the core css is applied
+        filemtime( get_template_directory() . '/Assets/Css/admin.css' ),
+        'all'
+    );  
+    wp_enqueue_style('redux-custom-css');
+}
+// This example assumes your opt_name is set to OPT_NAME, replace with your opt_name value
+add_action( 'redux/page/' . $opt_name . '/enqueue', 'add_panel_css' );
 
 
 Redux::setSection($opt_name, array(
     'title' => __('Header', 'nine-theme'),
     'id' => 'header_settings',
     'desc' => __('Settings related to the theme Header.', 'nine-theme'),
-    'icon' => 'el el-star-alt',
+    'icon' => 'fa fa-bell-o',
     'fields' => array(
 
         array(
@@ -122,18 +151,34 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-    'title' => __('Typography Settings', 'nine-theme'),
+    'title' => __('Typography', 'nine-theme'),
     'id' => 'Typography_settings',
     'desc' => __('Settings related to the general appearance of the theme.', 'nine-theme'),
     'icon' => 'el el-cogs',
     // 'subsection' => true,
 
     'fields' => array(
+
+        array(
+            'id' => 'section_start_global_color',
+			'type'   => 'section',
+			'class'  => 'nine-section-start',
+			'title'  => esc_html__( 'Highlight Elements', 'nine-theme' ),
+			'indent' => true,
+        ),
+
          array(
             'id' => 'body_bg_color',
             'type' => 'color',
             'title' => esc_html__('Body Background Color', 'nine-theme'),
             'default' => '#ffffff', // Default white background
+            'validate' => 'color',
+        ),
+        array(
+            'id' => 'primary_colors',
+            'type' => 'color',
+            'title' => esc_html__('Primary Color', 'nine-theme'),
+            'default' => '#E50D0D', // Default white background
             'validate' => 'color',
         ),
         array(
@@ -143,21 +188,23 @@ Redux::setSection($opt_name, array(
             'default' => '#000000', // Default white background
             'validate' => 'color',
         ),
+
         array(
-            'id' => 'link_color',
+            'id' => 'header_background_colors',
             'type' => 'color',
-            'title' => esc_html__('Link Color', 'nine-theme'),
-            'default' => '#340DE5', // Default white background
+            'title' => esc_html__('Header Bacground Color', 'nine-theme'),
+            'default' => '#FFFFFF', // Default white background
             'validate' => 'color',
         ),
 
         array(
-            'id' => 'primary_colors',
+            'id' => 'box_color',
             'type' => 'color',
-            'title' => esc_html__('Primary Color', 'nine-theme'),
-            'default' => '#E50D0D', // Default white background
+            'title' => esc_html__('Box Bacground Color', 'nine-theme'),
+            'default' => '#FFFFFF', // Default white background
             'validate' => 'color',
         ),
+
         array( 
             
                 'id'          => 'opt-typography',
@@ -180,13 +227,13 @@ Redux::setSection($opt_name, array(
         ),
     ),
 
-    array(
-            'id' => 'custom_css_code',
-            'title' => __( 'Custom Css Style' , 'nine-theme' ),
-            'type' => 'ace_editor',
-            'theme' => 'chrome',
-            'mode' => 'css',
-    )
+    // array(
+    //         'id' => 'custom_css_code',
+    //         'title' => __( 'Custom Css Style' , 'nine-theme' ),
+    //         'type' => 'ace_editor',
+    //         'theme' => 'chrome',
+    //         'mode' => 'css',
+    // )
     ),
 ));
 

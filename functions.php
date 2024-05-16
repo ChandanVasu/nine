@@ -138,7 +138,7 @@ if ( ! function_exists( 'nine_theme' ) ) {
         ) );
 
         // Support only standard post format
-        add_theme_support( 'post-formats', array( 'standard','video' ) );
+        add_theme_support( 'post-formats', array( 'standard','video', 'gallery' ) );
 
         // Add support for custom logo
         add_theme_support( 'custom-logo', array(

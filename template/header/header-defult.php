@@ -12,7 +12,7 @@ if ($template_id) {
     if (function_exists('display_nine_core_content')) {
         $elementor_content = display_nine_core_content($template_id);
         if ($elementor_content) {
-            echo $elementor_content;
+            echo apply_filters( 'nine-header', $elementor_content );
         } else {
             // If no Elementor content, use the fallback logic
             switch ($selected_header) {

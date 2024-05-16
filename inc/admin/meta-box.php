@@ -16,11 +16,6 @@ function custom_metabox_example() {
         'type' => 'text',
     ) );
 
-    $cmb->add_field( array(
-        'name' => __( 'Field 2', 'nine-theme' ),
-        'id'   => $prefix . 'field2',
-        'type' => 'textarea',
-    ) );
 
     // Add more fields as needed
 }
