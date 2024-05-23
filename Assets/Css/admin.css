@@ -484,8 +484,8 @@
 
     body .redux-container .redux-sidebar .redux-group-menu li.active a,
     body .redux-container .redux-sidebar .redux-group-menu li.activeChild a {
-        color: #ffffff !important;
-        background-color: #4ca26b !important;
+        color: #000000 !important;
+        background-color: #01FFDD !important;
         text-shadow: none !important;
     }
 
@@ -531,7 +531,7 @@
         border: none !important;
         -webkit-border-radius: 40px !important;
         border-radius: 40px !important;
-        background: #7a8292;
+        background: #064ddb;
         box-shadow: none !important;
         text-shadow: none;
     }

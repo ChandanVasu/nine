@@ -52,22 +52,6 @@ $args = array(
 Redux::setArgs($opt_name, $args);
 
 
-function new_icon_font() {
-    // Uncomment this to remove elusive icon from the panel completely
-    //wp_deregister_style( 'redux-elusive-icon' );
-    //wp_deregister_style( 'redux-elusive-icon-ie7' );
-
-    wp_register_style(
-        'redux-font-awesome',
-        '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css',
-        array(),
-        time(),
-        'all'
-    );  
-    wp_enqueue_style( 'redux-font-awesome' );
-}
-add_action( 'redux/page/' . $opt_name . '/enqueue', 'new_icon_font' );
-
 
 function add_panel_css() {
     wp_register_style(
