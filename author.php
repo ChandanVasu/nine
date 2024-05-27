@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package YourTheme
+ * @package nine_theme
  */
 
 get_header(); ?>

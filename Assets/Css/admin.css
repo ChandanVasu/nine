@@ -875,8 +875,9 @@
         background-color: #ffc784;
     }
 
-    .redux-section-field h3 {
+    .indent-section-container .redux-section-field h3 {
         border-bottom: none !important;
+        padding-left: 10px !important;
     }
 
     div.ruby-section-end {
@@ -962,11 +963,10 @@
         min-width: 260px;
         margin-top: 0;
         margin-bottom: 10px;
-        padding: 0 10px;
-        color: #ffffff !important;
-        border-left: 7px solid #0070b4;
+        padding-left: 10px;
+        color: #000000 !important;
         border-radius: 7px;
-        background: #489fff !important;
+        background: #01FFDD  !important;
     }
 
     .redux-container .redux-container-sorter h3 {

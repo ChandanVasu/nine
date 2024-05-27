@@ -1,47 +1,42 @@
-<div class='single-one-post'>
-   <div class="single-one-post-content">
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-      <?php if (has_post_thumbnail()) : ?>
-      <div class="post-thumbnail thumbnail">
-         <?php the_post_thumbnail(); ?>
-         <div class='single-one-post-thumbnail-inner'>
-            <span class="category">
-            <?php the_category(', '); ?>
-            </span>
-            <h1 class='single-one-post-title'>
-               <?php the_title(); ?>
-            </h1>
-            <div class="post-meta">
-               <?php
-                  $author_id = get_the_author_meta('ID');
-                  $author_avatar = get_avatar($author_id, 32); // Change 32 to the desired avatar size
-                  ?>
-               <span class="author-avatar">
-               <?php echo wp_kses_post($author_avatar); ?>
-               </span>
-               <div class='post-meta-inner'>
-                  <p class="author-name">
-                     <?php the_author(); ?>
-                  </p>
-                  <p class="post-date">
-                     <?php echo get_the_date(); ?>
-                  </p>
-               </div>
+<?php
+/**
+ * Template part for displaying single posts
+ *
+ * @package nine_theme
+ */
+?>
+
+<div class='s-1'>
+    <div class='s-1-post'>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <div class='s-1-header'>
+                <h1 class='s-1-title title'>
+                    <?php the_title(); ?>
+                </h1>
+                
             </div>
-         </div>
-      </div>
-      <?php endif; ?>
-      <div class="post-content">
-         <?php the_content(); ?>
-      </div>
-      <!-- Display Comments -->
-      <div class="comments-section">
-         <?php comments_template(); ?>
-      </div>
-      <?php endwhile;
-         endif; ?>
-   </div>
-   <div class="single-one-post-sidebar">
-      <?php get_sidebar(); ?>
-   </div>
+            <div class='s-1-thumbnail thumbnail'>
+                <?php display_post_thumbnail(); ?>
+            </div>
+            <div class="post-content">
+                <?php the_content(); ?>
+            </div>
+        </article>
+
+        <div class='s-1-tags'>
+            <?php nine_post_tags(); ?>
+        </div>
+
+        <div class='s-1-comment'>
+            <?php
+            if (comments_open() || get_comments_number()) :
+                comments_template();
+            endif;
+            ?>
+        </div>
+    </div>
+
+    <div class='s-1-sidebar'>
+        <?php get_sidebar(); ?>
+    </div>
 </div>

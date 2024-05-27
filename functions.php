@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /*
 --------------------------------------------------------------------------------
-* Add frontend style 
+* Enqueue Frontend Styles and Scripts
 * ------------------------------------------------------------------------------
 */
 
@@ -19,18 +19,16 @@ function enqueue_custom_assets() {
     // Enqueue JavaScript files
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/Js/main.js');
 
-    // If the script relies on jQuery, add 'jquery' to the array of dependencies
+    // If the script relies on jQuery, uncomment the following line
     // wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/js/main.js', array('jquery'), false, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_assets');
-
 
 /*
 --------------------------------------------------------------------------------
 * Register Sidebar
 * ------------------------------------------------------------------------------
 */
-
 
 function theme_register_sidebar() {
     register_sidebar(array(
@@ -45,35 +43,30 @@ function theme_register_sidebar() {
 }
 add_action('widgets_init', 'theme_register_sidebar');
 
-
-
 /*
 --------------------------------------------------------------------------------
-*  Get the excerpt
+* Get the Excerpt
 * ------------------------------------------------------------------------------
 */
 
-
 function father_get_the_excerpt($length = 0) {
-
-	$excerpt = get_the_excerpt();
-	if ($excerpt) {
-		$excerpt = wp_strip_all_tags($excerpt);
-		$excerpt = str_replace('[…]', '', $excerpt);
-		$excerpt = trim($excerpt);
-        if( absint($length) < strlen($excerpt) ) {
-	        $excerpt = substr($excerpt, 0, absint($length));
-	        $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
-	        $excerpt .= '...';
+    $excerpt = get_the_excerpt();
+    if ($excerpt) {
+        $excerpt = wp_strip_all_tags($excerpt);
+        $excerpt = str_replace('[…]', '', $excerpt);
+        $excerpt = trim($excerpt);
+        if (absint($length) < strlen($excerpt)) {
+            $excerpt = substr($excerpt, 0, absint($length));
+            $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
+            $excerpt .= '...';
         }
-	}
-
+    }
     return $excerpt;
 }
 
 /*
 --------------------------------------------------------------------------------
-*  Call jquary
+* Enqueue jQuery
 * ------------------------------------------------------------------------------
 */
 
@@ -82,128 +75,123 @@ function mytheme_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');
 
-
-
-
-
 /*
 --------------------------------------------------------------------------------
 * Theme Setup
 * ------------------------------------------------------------------------------
 */
 
-
 if ( ! function_exists( 'nine_theme' ) ) {
     function nine_theme() {
-        load_theme_textdomain( 'nine-theme', get_template_directory() . '/languages' );
-        if ( ! isset( $GLOBALS['content_width'] ) ) {
+        load_theme_textdomain('nine-theme', get_template_directory() . '/languages');
+        if ( ! isset($GLOBALS['content_width']) ) {
             $GLOBALS['content_width'] = 1920;
         }
 
-        add_theme_support( 'automatic-feed-links' );
-        add_theme_support( 'title-tag' );
-        add_theme_support( 'responsive-embeds' );
-        add_theme_support( 'customize-selective-refresh-widgets' );
-        add_theme_support( 'editor-styles' );
-        add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+        add_theme_support('automatic-feed-links');
+        add_theme_support('title-tag');
+        add_theme_support('responsive-embeds');
+        add_theme_support('customize-selective-refresh-widgets');
+        add_theme_support('editor-styles');
+        add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
 
-        register_nav_menus( array(
-            'main_menu'   => 'Main Menu',
+        register_nav_menus(array(
+            'main_menu' => 'Main Menu',
             // 'mobile_menu' => 'Mobile Menu',
-        ) );
+        ));
 
-        add_theme_support( 'amp' );
+        add_theme_support('amp');
+        add_theme_support('post-thumbnails');
+        add_image_size('placeholder-img', 30, 30, true);
+        set_post_thumbnail_size(480, 0);
 
-        add_theme_support( 'post-thumbnails' );
-        add_image_size( 'placeholder-img', 30, 30, true );
-        set_post_thumbnail_size( 480, 0 );
-
-        // Adds support for editor color palette.
-        add_theme_support( 'editor-color-palette', array(
+        // Adds support for editor color palette
+        add_theme_support('editor-color-palette', array(
             array(
-                'name'  => esc_html__( 'Accent', 'nine-theme' ),
+                'name'  => esc_html__('Accent', 'nine-theme'),
                 'slug'  => 'accent',
-                'color' => '#ff0000', // Replace with your desired color value
+                'color' => '#ff0000',
             ),
             array(
-                'name'  => esc_html__( 'Dark', 'nine-theme' ),
+                'name'  => esc_html__('Dark', 'nine-theme'),
                 'slug'  => 'dark',
-                'color' => '#000000', // Replace with your desired color value
+                'color' => '#000000',
             ),
             array(
-                'name'  => esc_html__( 'Light', 'nine-theme' ),
+                'name'  => esc_html__('Light', 'nine-theme'),
                 'slug'  => 'light',
-                'color' => '#ffffff', // Replace with your desired color value
+                'color' => '#ffffff',
             ),
-        ) );
+        ));
 
         // Support only standard post format
-        add_theme_support( 'post-formats', array( 'standard','video', 'gallery' ) );
+        add_theme_support('post-formats', array('standard', 'video', 'gallery'));
 
         // Add support for custom logo
-        add_theme_support( 'custom-logo', array(
-            'height'      => 100, // Adjust as needed
-            'width'       => 400, // Adjust as needed
+        add_theme_support('custom-logo', array(
+            'height'      => 100,
+            'width'       => 400,
             'flex-height' => true,
             'flex-width'  => true,
-            'header-text' => array( 'site-title', 'site-description' ), // Optional, to hide these elements when the logo is displayed
-        ) );
+            'header-text' => array('site-title', 'site-description'),
+        ));
     }
 }
-add_action( 'after_setup_theme', 'nine_theme', 1 );
+add_action('after_setup_theme', 'nine_theme', 1);
 
+/*
+--------------------------------------------------------------------------------
+* Include Additional Files
+* ------------------------------------------------------------------------------
+*/
 
-
-
-require_once get_template_directory() . '/inc/admin/tgm/required-plugins.php';
-
+require get_template_directory() . '/inc/admin/tgm/required-plugins.php';
+require get_template_directory() . '/inc/post-meta.php';
 
 if (function_exists('nine_core_activate')) {
-    require_once(dirname(__FILE__) . '/inc/admin/sample-config.php');
-    require_once(dirname(__FILE__) . '/inc/admin/meta-box.php');
+    require(dirname(__FILE__) . '/inc/admin/sample-config.php');
+    require(dirname(__FILE__) . '/inc/admin/meta-box.php');
 }
 
-
-
+/*
+--------------------------------------------------------------------------------
+* Enqueue Elementor Styles
+* ------------------------------------------------------------------------------
+*/
 
 if ( ! function_exists( 'nine_styles_elementor' ) ) {
-
-	function nine_styles_elementor() {
-		if ( ! class_exists( 'Elementor\Plugin' ) ) {
+    function nine_styles_elementor() {
+        if ( ! class_exists('Elementor\Plugin') ) {
             return;
         }
 
-        if ( class_exists( '\Elementor\Plugin' ) ) {
+        if ( class_exists('\Elementor\Plugin') ) {
             $elementor = \Elementor\Plugin::instance();
             $elementor->frontend->enqueue_styles();
         }
 
-        if ( class_exists( '\ElementorPro\Plugin' ) ) {
+        if ( class_exists('\ElementorPro\Plugin') ) {
             $elementor_pro = \ElementorPro\Plugin::instance();
             $elementor_pro->enqueue_styles();
         }
+
         $nine_theme = get_option("nine_theme");
-
-		$template_ids = array_unique( array(
+        $template_ids = array_unique(array(
             $nine_theme["header_template"]
-        ) );
+        ));
 
-		if ( ! empty( $template_ids ) ) {
-			foreach ( $template_ids as $template_id ) {
-	            if( $template_id ) {
-	                if ( class_exists( '\Elementor\Core\Files\CSS\Post' ) ) {
-	                    $css_file = new \Elementor\Core\Files\CSS\Post( $template_id );
-	                } elseif ( class_exists( '\Elementor\Post_CSS_File' ) ) {
-	                    $css_file = new \Elementor\Post_CSS_File( $template_id );
-	                }
-
-	                $css_file->enqueue();
-	            }
-	        }
-		}
-	}
+        if ( ! empty($template_ids) ) {
+            foreach ($template_ids as $template_id) {
+                if ($template_id) {
+                    if ( class_exists('\Elementor\Core\Files\CSS\Post') ) {
+                        $css_file = new \Elementor\Core\Files\CSS\Post($template_id);
+                    } elseif ( class_exists('\Elementor\Post_CSS_File') ) {
+                        $css_file = new \Elementor\Post_CSS_File($template_id);
+                    }
+                    $css_file->enqueue();
+                }
+            }
+        }
+    }
 }
-add_action( 'wp_enqueue_scripts', 'nine_styles_elementor' );
-
-
-
+add_action('wp_enqueue_scripts', 'nine_styles_elementor');

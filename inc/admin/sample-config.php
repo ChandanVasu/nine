@@ -68,7 +68,7 @@ add_action( 'redux/page/' . $opt_name . '/enqueue', 'add_panel_css' );
 
 
 Redux::setSection($opt_name, array(
-    'title' => __('Header', 'nine-theme'),
+    'title' => __('Header Setting', 'nine-theme'),
     'id' => 'header_settings',
     'desc' => __('Settings related to the theme Header.', 'nine-theme'),
     'icon' => 'fa fa-bell-o',
@@ -100,6 +100,54 @@ Redux::setSection($opt_name, array(
     ),
 ));
 
+Redux::setSection($opt_name, array(
+    'title' => __('Single Post', 'nine-theme'),
+    'id' => 'single_post',
+    'desc' => __('Settings related to the theme Single Post.', 'nine-theme'),
+    'icon' => 'fa fa-solid fa-file',
+    'fields' => array(
+
+        array(
+			'id'       => 'single_template',
+			'type'     => 'select',
+			'title'    => esc_html__('Custom Single Post template', 'nine-theme'),
+			'subtitle' => esc_html__('Select the template to show in Single Post.', 'nine-theme'),
+			'desc'	=> sprintf( esc_html__( 'You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme' ), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>' ),
+			'options'  => nine_get_posts_id( 'nine_theme' ),
+			'placeholder'  => esc_html__('Select block', 'nine-theme'),
+		),
+
+        array(
+            'id' => 'single_select',
+            'type' => 'select',
+            'title' => esc_html__('Single Post', 'nine-theme'),
+            'subtitle' => esc_html__('This All Header Is All Ready Have Theme , If You Want Craete New Header Plese Select Custom Header', 'nine-theme'),
+            'options' => array(
+                'header-one' => esc_html__('Header One', 'nine-theme'),
+                'header-two' => esc_html__('Header Two', 'nine-theme'),
+                'header-three' => esc_html__('Header Three', 'nine-theme'),
+            ),
+            'default' => 'header-one', // Default option
+        ),
+
+        array(
+            'id' => 'video_post_type',
+			'type'   => 'section',
+			'class'  => 'nine-section-start',
+			'title'  => esc_html__( 'Video Post', 'nine-theme' ),
+			'indent' => true,
+        ),
+
+        array(
+            'id' => 'gallary_post_type',
+			'type'   => 'section',
+			'class'  => 'nine-section-start',
+			'title'  => esc_html__( 'Gallary Post', 'nine-theme' ),
+			'indent' => true,
+        ),
+
+    ),
+));
 
 
 Redux::setSection($opt_name, array(
@@ -138,7 +186,7 @@ Redux::setSection($opt_name, array(
     'title' => __('Typography', 'nine-theme'),
     'id' => 'Typography_settings',
     'desc' => __('Settings related to the general appearance of the theme.', 'nine-theme'),
-    'icon' => 'el el-cogs',
+    'icon' => 'fa-solid fa-paintbrush',
     // 'subsection' => true,
 
     'fields' => array(
