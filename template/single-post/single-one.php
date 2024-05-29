@@ -1,11 +1,3 @@
-<?php
-/**
- * Template part for displaying single posts
- *
- * @package nine_theme
- */
-?>
-
 <div class='s-1'>
     <div class='s-1-post'>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -13,7 +5,7 @@
                 <h1 class='s-1-title title'>
                     <?php the_title(); ?>
                 </h1>
-                
+                <?php echo nine_theme_display_post_meta(); ?>
             </div>
             <div class='s-1-thumbnail thumbnail'>
                 <?php display_post_thumbnail(); ?>

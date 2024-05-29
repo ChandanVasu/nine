@@ -61,5 +61,54 @@ function nine_post_tags() {
 
 
 
+function nine_theme_display_post_meta() {
+    $author_id = get_the_author_meta('ID');
+    $author_avatar = get_avatar($author_id, 32); // Change 32 to the desired avatar size
+    $author_url = get_author_posts_url($author_id);
+
+    $output = '<div class="post-meta">';
+    $output .= '<span class="author-avatar">' . wp_kses_post($author_avatar) . '</span>';
+    $output .= '<div class="post-meta-inner">';
+    $output .= '<span class="author-name">author: <a href="' . esc_url($author_url) . '">' . get_the_author() . '</a></span>';
+    $output .= '<span class="post-date">update: ' . get_the_date() . '</span>';
+    $output .= '</div></div>';
+
+    return $output;
+}
+
+
+function my_custom_navigation() {
+    $menu_name = 'main_menu'; // Replace with your actual theme location name
+    $menu_locations = get_nav_menu_locations();
+    
+    // Check if the menu location has a menu assigned to it
+    if (isset($menu_locations[$menu_name])) {
+        $menu = wp_get_nav_menu_object($menu_locations[$menu_name]);
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+        if ($menu_items && !empty($menu_items)) {
+            // If menu has items, display it
+            wp_nav_menu(array(
+                'theme_location' => $menu_name,
+                'menu_id'        => 'nav-main',
+                'container'      => 'div',
+                'container_class'=> 'nav-main-container',
+                'menu_class'     => 'nav-main',
+                'fallback_cb'    => false,
+            ));
+        } else {
+            // If menu is empty, display message or link
+            echo '<div class="nav-main-container">';
+            echo '<p>No menu items found. <a href="' . admin_url('nav-menus.php?action=edit&menu=0') . '">Create a menu</a>.</p>';
+            echo '</div>';
+        }
+    } else {
+        // If no menu is set for the location, display message or link
+        echo '<div class="nav-main-container">';
+        echo '<p>No menu assigned to this location. <a href="' . admin_url('nav-menus.php?action=edit&menu=0') . '">Create a menu</a>.</p>';
+        echo '</div>';
+    }
+}
+
 
 

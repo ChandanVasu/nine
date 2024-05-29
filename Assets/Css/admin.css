@@ -1945,3 +1945,8 @@ div.rb-setting-warning {
 .redux-main.redux-search .redux-group-tab:not(.is-match) {
     display: none !important;
 }
+
+.wp-full-overlay-sidebar-content{
+    background-color: white;
+}
+

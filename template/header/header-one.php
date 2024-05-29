@@ -1,48 +1,41 @@
-<header class="site-header-one">
-    <div class="container">
+<div class='site-main'>
+    <header class="nine-h-1">
 
         <!-- Site Branding (e.g., Logo, Title, Description) -->
-        <div class="site-branding-one">
+        <div class="nine-h-1-logo logo-image">
             <?php
             if (has_custom_logo()) {
                 the_custom_logo();
             } else {
                 ?>
-                <h1 class="site-title">
-                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                        <?php bloginfo('name'); ?>
-                    </a>
-                </h1>
-                <p class="site-description"><?php bloginfo('description'); ?></p>
-                <?php
+            <h1 class="nine-h-1-text-logo logo-text">
+                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                    <?php bloginfo('name'); ?>
+                </a>
+            </h1>
+            <p class="nine-h-1-text-description">
+                <?php bloginfo('description'); ?>
+            </p>
+            <?php
             }
             ?>
         </div>
 
         <!-- Navigation -->
-        <nav class="site-navigation-one">
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'main_menu', // Using a different menu location
-                'menu_id'        => 'nav-main',
-                'container'      => 'div',
-                'container_class'=> 'menu-container-one',
-                'menu_class'     => 'nav-main',
-                'fallback_cb'    => false,
-            ));
-            ?>
+        <nav class="nine-h-1-menu">
+            <?php my_custom_navigation(); ?>
         </nav>
 
-        <!-- Optional Search Form -->
-        <!-- <div class="search-form-container">
-            <?php get_search_form();  ?>
-        </div> -->
-
-        <!-- Additional Section (Optional) -->
-        <div class="extra-header-section">
-            <!-- You can add extra content here, like social media links, call-to-action buttons, etc. -->
-            <a href="#special-offer" class="special-offer-link">Special Offer</a>
+        <div class='nine-h-1-search'>
+            <?php get_search_form(); ?>
         </div>
 
-    </div>
-</header>
+        <div class='social-media'>
+            <div class='facebook'></div>
+            <div class='insta'></div>
+            <div class='x'></div>
+        </div>
+
+
+    </header>
+</div>

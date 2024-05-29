@@ -36,3 +36,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(showNextImage, 3000);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    function addMenuListeners(menuItems) {
+        menuItems.forEach(function(item) {
+            item.addEventListener('mouseenter', function() {
+                const submenu = this.querySelector('.sub-menu');
+                if (submenu) {
+                    submenu.style.display = 'block';
+                }
+            });
+
+            item.addEventListener('mouseleave', function() {
+                const submenu = this.querySelector('.sub-menu');
+                if (submenu) {
+                    submenu.style.display = 'none';
+                }
+            });
+
+            item.addEventListener('click', function(event) {
+                const submenu = this.querySelector('.sub-menu');
+                if (submenu) {
+                    if (submenu.style.display === 'block') {
+                        submenu.style.display = 'none';
+                    } else {
+                        submenu.style.display = 'block';
+                    }
+                    event.stopPropagation(); // Prevent event from bubbling up
+                    event.preventDefault();  // Prevent default link behavior
+                }
+            });
+
+            // Close submenu when clicking outside
+            document.addEventListener('click', function() {
+                const submenu = item.querySelector('.sub-menu');
+                if (submenu) {
+                    submenu.style.display = 'none';
+                }
+            });
+
+            // Recursively add listeners to nested submenus
+            const nestedMenuItems = item.querySelectorAll('.sub-menu .menu-item');
+            if (nestedMenuItems.length > 0) {
+                addMenuListeners(nestedMenuItems);
+            }
+        });
+    }
+
+    const topLevelMenuItems = document.querySelectorAll('.nav-main .menu-item');
+    addMenuListeners(topLevelMenuItems);
+});
