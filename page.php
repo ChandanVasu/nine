@@ -18,7 +18,7 @@ get_header(); ?>
         endwhile;
         ?>
 
-        </main><!-- .site-main -->
+        </main><
     </div><!-- .content-area -->
 
 <?php get_footer(); ?>
