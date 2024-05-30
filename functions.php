@@ -152,6 +152,19 @@ if (function_exists('nine_core_activate')) {
     require(dirname(__FILE__) . '/inc/admin/meta-box.php');
 }
 
+
+if ( ! function_exists( 'nine_opt_check' ) ) {
+    function nine_opt_check( $key, $default = null ) {
+        $nine_theme = get_option("nine_theme");
+
+        if ( isset( $nine_theme[$key] ) && ! empty( $nine_theme[$key] ) ) {
+            return $nine_theme[$key];
+        }
+
+        return $default;
+    }
+}
+
 /*
 --------------------------------------------------------------------------------
 * Enqueue Elementor Styles
@@ -176,7 +189,7 @@ if ( ! function_exists( 'nine_styles_elementor' ) ) {
 
         $nine_theme = get_option("nine_theme");
         $template_ids = array_unique(array(
-            $nine_theme["header_template"]
+            nine_opt_check('header_template')
         ));
 
         if ( ! empty($template_ids) ) {

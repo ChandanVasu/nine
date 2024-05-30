@@ -203,21 +203,21 @@ Redux::setSection($opt_name, array(
             'id' => 'body_bg_color',
             'type' => 'color',
             'title' => esc_html__('Body Background Color', 'nine-theme'),
-            'default' => '#ffffff', // Default white background
+            'default' => '#eae2e2', // Default white background
             'validate' => 'color',
         ),
         array(
             'id' => 'primary_colors',
             'type' => 'color',
             'title' => esc_html__('Primary Color', 'nine-theme'),
-            'default' => '#E50D0D', // Default white background
+            'default' => '#0D1BE5', // Default white background
             'validate' => 'color',
         ),
         array(
             'id' => 'primary_text',
             'type' => 'color',
             'title' => esc_html__('Primary Text Color', 'nine-theme'),
-            'default' => '#000000', // Default white background
+            'default' => '#FFFFFF', // Default white background
             'validate' => 'color',
         ),
 
@@ -244,7 +244,7 @@ Redux::setSection($opt_name, array(
                 'title'       => esc_html__('Typography', 'nine-theme'),
                 'google'      => true, 
                 'font-backup' => true,
-                'output'      => array('.title a'),
+                'output'      => array('body'),
                 'units'       =>'px',
                 'subtitle'    => esc_html__('Typography option with each property can be called individually.', 'nine-theme'),
                 'default'     => array(
@@ -258,14 +258,6 @@ Redux::setSection($opt_name, array(
             
         ),
     ),
-
-    // array(
-    //         'id' => 'custom_css_code',
-    //         'title' => __( 'Custom Css Style' , 'nine-theme' ),
-    //         'type' => 'ace_editor',
-    //         'theme' => 'chrome',
-    //         'mode' => 'css',
-    // )
     ),
 ));
 

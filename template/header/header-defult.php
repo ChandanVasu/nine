@@ -1,18 +1,14 @@
 <?php
 
-// Global Redux Framework options
-$nine_theme = get_option("nine_theme");
-
-// Retrieve the selected header template from Redux
-$selected_header = isset($nine_theme['header_select']) ? $nine_theme['header_select'] : 'header-one';
-$template_id = isset($nine_theme["header_template"]) ? $nine_theme["header_template"] : null;
+$selected_header = nine_opt_check('header_select', 'header-one');
+$template_id = nine_opt_check('header_template');
 
 if ($template_id) {
     // If there's a valid template ID, display the Elementor content
     if (function_exists('display_nine_core_content')) {
         $elementor_content = display_nine_core_content($template_id);
         if ($elementor_content) {
-            echo apply_filters( 'nine-header', $elementor_content );
+            echo apply_filters('nine-header', $elementor_content);
         } else {
             // If no Elementor content, use the fallback logic
             switch ($selected_header) {
@@ -26,7 +22,7 @@ if ($template_id) {
                     get_template_part('template/header/header-three');
                     break;
                 default:
-                    get_template_part('template/header/header-one'); // Fallback to 'header-three'
+                    get_template_part('template/header/header-one'); // Fallback to 'header-one'
                     break;
             }
         }
@@ -46,7 +42,7 @@ if ($template_id) {
             get_template_part('template/header/header-three');
             break;
         default:
-            get_template_part('template/header/header-one'); // Fallback to 'header-three'
+            get_template_part('template/header/header-one'); // Fallback to 'header-one'
             break;
     }
 }

@@ -204,8 +204,8 @@ blockquote::before {
 	vertical-align: middle;
 	line-height: 1;
 	position: absolute;
-	left: 10px;
-	top: 5px;
+	left: 20px;
+	top: 10px;
 }
 
 blockquote>p:last-of-type {
@@ -512,9 +512,9 @@ ins, mark {
 }
 
 label {
-	color: var(--link-text-color);
+	color: var(--primary-text);
 	display: block;
-	margin-bottom: 0.5em;
+	margin-bottom: 0;
 	text-transform: none;
 }
 
@@ -2280,7 +2280,7 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 }
 
 .wp-block-archives, .wp-block-archives-list, .wp-block-archives-dropdown, .wp-block-calendar, .wp-block-categories, .wp-block-latest-comments, .wp-block-latest-posts, .wp-block-search, .wp-block-tag-cloud, .wp-block-rss, .gallery, .wp-block-audio, .wp-block-button, .wp-block-columns, .wp-block-cover, .wp-block-embed, .wp-block-gallery, .wp-block-gallery:not(.has-nested-images), .wp-block-group, .wp-block-image, .wp-block-media-text, .wp-block-video, .wp-block-pullquote, .wp-block-table, .wp-caption, address, blockquote, dl, fieldset, figure, form, ol, p, pre, button, input, select, textarea, form p, ul:not(.blocks-gallery-grid), table {
-	margin-bottom: 35px;
+	margin-bottom: 25px;
 	margin-top: 0;
 }
 
@@ -2393,7 +2393,7 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 	border-radius: 10px;
 	border-right: none;
 	margin-top: 10px;
-	padding: 10px;
+	padding: 25px;
 }
 
 .wp-block-quote p {

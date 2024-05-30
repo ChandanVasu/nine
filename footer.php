@@ -1,8 +1,6 @@
 <?php
-global $nine_theme;
 
-// Check if 'footer_text' is defined using isset() and not empty
-$footer_text = (isset($nine_theme['footer_text']) && !empty($nine_theme['footer_text'])) ? $nine_theme['footer_text'] : 'VasuTheme All Rights Reserved';
+$footer_text = nine_opt_check('footer_text', ' All Rights Reserved');
 ?>
 
 <!-- Display in the footer -->
