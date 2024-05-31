@@ -2592,10 +2592,6 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 	color: var(--primary-text);
 }
 
-.nav-main li {
-	list-style: none;
-	display: flex;
-}
 
 .comment {
 	list-style-type: none;

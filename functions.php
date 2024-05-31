@@ -153,8 +153,8 @@ if (function_exists('nine_core_activate')) {
 }
 
 
-if ( ! function_exists( 'nine_opt_check' ) ) {
-    function nine_opt_check( $key, $default = null ) {
+if ( ! function_exists( 'nine_get_opt' ) ) {
+    function nine_get_opt( $key, $default = null ) {
         $nine_theme = get_option("nine_theme");
 
         if ( isset( $nine_theme[$key] ) && ! empty( $nine_theme[$key] ) ) {
@@ -189,7 +189,7 @@ if ( ! function_exists( 'nine_styles_elementor' ) ) {
 
         $nine_theme = get_option("nine_theme");
         $template_ids = array_unique(array(
-            nine_opt_check('header_template')
+            nine_get_opt('header_template')
         ));
 
         if ( ! empty($template_ids) ) {

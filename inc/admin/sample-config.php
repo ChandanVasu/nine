@@ -203,7 +203,7 @@ Redux::setSection($opt_name, array(
             'id' => 'body_bg_color',
             'type' => 'color',
             'title' => esc_html__('Body Background Color', 'nine-theme'),
-            'default' => '#eae2e2', // Default white background
+            'default' => '#FFFFFF', // Default white background
             'validate' => 'color',
         ),
         array(

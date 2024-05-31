@@ -1,7 +1,7 @@
 <?php
 
-$selected_header = nine_opt_check('header_select', 'header-one');
-$template_id = nine_opt_check('header_template');
+$selected_header = nine_get_opt('header_select', 'header-one');
+$template_id = nine_get_opt('header_template');
 
 if ($template_id) {
     // If there's a valid template ID, display the Elementor content

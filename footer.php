@@ -1,6 +1,6 @@
 <?php
 
-$footer_text = nine_opt_check('footer_text', ' All Rights Reserved');
+$footer_text = nine_get_opt('footer_text', ' All Rights Reserved');
 ?>
 
 <!-- Display in the footer -->

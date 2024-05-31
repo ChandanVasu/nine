@@ -21,21 +21,14 @@
             ?>
         </div>
 
-        <!-- Navigation -->
-        <nav class="nine-h-1-menu">
-            <?php my_custom_navigation(); ?>
-        </nav>
 
-        <div class='nine-h-1-search'>
-            <?php get_search_form(); ?>
-        </div>
+        <?php get_template_part('template/header/header-part'); ?>
 
-        <div class='social-media'>
-            <div class='facebook'></div>
-            <div class='insta'></div>
-            <div class='x'></div>
-        </div>
 
 
     </header>
+</div>
+
+<div class='offcanvas-full'>
+
 </div>

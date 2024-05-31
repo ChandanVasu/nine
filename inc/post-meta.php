@@ -77,7 +77,7 @@ function nine_theme_display_post_meta() {
 }
 
 
-function my_custom_navigation() {
+function nine_menu() {
     $menu_name = 'main_menu'; // Replace with your actual theme location name
     $menu_locations = get_nav_menu_locations();
     
@@ -112,3 +112,40 @@ function my_custom_navigation() {
 
 
 
+function custom_pagination($query = null) {
+    if (!$query) {
+        global $wp_query;
+        $query = $wp_query;
+    }
+
+    if ($query->max_num_pages <= 1) return;
+
+    $paginate_args = array(
+        'current'   => max(1, get_query_var('paged'), get_query_var('page')),
+        'total'     => $query->max_num_pages,
+        'prev_next' => true,
+        'prev_text' => __('&#9664;', 'nine-theme'),
+        'next_text' => __('&#9654;', 'nine-theme'),
+    );
+
+    echo paginate_links($paginate_args);
+}
+
+
+
+
+function display_post_categories() {
+    $categories = get_the_category();
+    if (!empty($categories)) {
+        ?>
+        <div class="nine-categories">
+            <?php foreach ($categories as $category) : ?>
+                <a href="<?php echo esc_url(get_category_link($category->term_id)); ?>">
+                    <?php echo esc_html($category->name); ?>
+                </a>
+                <?php if (end($categories) !== $category) echo ', '; ?>
+            <?php endforeach; ?>
+        </div>
+        <?php
+    }
+}
