@@ -14,6 +14,9 @@
                                 <a href="<?php the_permalink(); ?>">
                                     <?php the_post_thumbnail('', array('title' => get_the_title())); ?>
                                 </a>
+                                <span class='h-1-categories'>
+                                    <?php display_post_categories() ?>
+                                </span>
                             </div>
                         <?php endif; ?>
 
@@ -23,7 +26,7 @@
                             </h2>
 
                             <div class="h-1-excerpt excerpt nine-excerpt">
-                                <?php echo wp_trim_words(get_the_content(), 30); ?>
+                                <?php echo wp_trim_words(get_the_content(), 20); ?>
                                 <a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
                                 <!-- Added Read More button -->
                             </div>

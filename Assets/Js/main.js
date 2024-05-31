@@ -28,28 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function callHamburger() {
-
-   var menuarea =  document.querySelector('.nine-menu-mobile');
-
-   var offcanvas = document.querySelector('.offcanvas-full');
 
 
-   menuarea.style.display = "none"
-   offcanvas.style.visibility = "hidden"
- 
-}
+ function closeHamburger() {
+    const menu = document.querySelector('.nine-menu-mobile');
 
-
-function closeHamburger() {
-
-    var menuarea =  document.querySelector('.nine-menu-mobile');
- 
-    var offcanvas = document.querySelector('.offcanvas-full');
- 
- 
-    menuarea.style.display = "block"
+    const offcanvas = document.querySelector('.offcanvas-full');
+    
     offcanvas.style.visibility = "visible"
+    menu.style.display = 'block'; // Show the menu
+    setTimeout(() => {
+      menu.classList.add('visible'); // Add class to trigger the transition
+    }, 10); // Small timeout to ensure display property takes effect before transition
+  }
   
- }
+  function callHamburger() {
+    const menu = document.querySelector('.nine-menu-mobile');
+    const offcanvas = document.querySelector('.offcanvas-full');
+    
+    offcanvas.style.visibility = "hidden"
 
+    menu.classList.remove('visible'); // Remove class to trigger the transition
+    setTimeout(() => {
+      menu.style.display = 'none'; // Hide the menu after transition completes
+    }, 500); // Match the duration of the transition
+  }
