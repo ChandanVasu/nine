@@ -53,3 +53,40 @@ document.addEventListener('DOMContentLoaded', function() {
       menu.style.display = 'none'; // Hide the menu after transition completes
     }, 500); // Match the duration of the transition
   }
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all menu items that have a sub-menu
+    const menuItems = document.querySelectorAll('.menu-item-has-children');
+  
+    // Loop through each menu item
+    menuItems.forEach(function(menuItem) {
+        const anchor = menuItem.querySelector('a');
+        if (anchor) {
+            // Add the submenu-icon class to the <a> tag
+            anchor.classList.add('submenu-icon');
+  
+            // Create a span element for the icon
+            const icon = document.createElement('span');
+            icon.classList.add('submenu-icon-span');
+            anchor.appendChild(icon);
+  
+            // Add click event to the icon
+            icon.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default action
+                const submenu = menuItem.querySelector('.sub-menu');
+                if (submenu) {
+                    // Toggle the display property
+                    if (submenu.style.display === 'block') {
+                        submenu.style.display = 'none';
+                    } else {
+                        submenu.style.display = 'block';
+                    }
+                }
+            });
+        }
+    });
+  });
+  

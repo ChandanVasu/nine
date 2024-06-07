@@ -1,19 +1,5 @@
-<!-- Desktop Menu -->
-<!-- <nav class="nine-menu-main">
-  <?php
-  wp_nav_menu(array(
-    'theme_location' => 'main_menu',
-    'menu_id'        => 'nav-main',
-    'container'      => 'div',
-    'container_class'=> 'nav-main-container',
-    'menu_class'     => 'nav-main',
-    'fallback_cb'    => false,
-  ));
-  ?>
-</nav> -->
 
-<!-- Mobile Menu Icon -->
-<div onclick="closeHamburger()" class="menu-icon"></div>
+<div onclick="closeHamburger()" class="nine-solid vt-menu"></div>
 
 
 <!-- Mobile Menu -->
@@ -39,20 +25,13 @@
       ?>
     </div>
     <!-- Close Icon -->
-    <div onclick="callHamburger()" class="close-icon"></div>
+    <div onclick="callHamburger()" class="nine-solid vt-close"></div>
   </div>
 
   <!-- Mobile Menu -->
-  <nav class="">
+  <nav class="mobile-nav-menu">
     <?php
-    wp_nav_menu(array(
-      'theme_location' => 'main_menu',
-      'menu_id'        => 'mobile-nav-menu',
-      'container'      => 'div',
-      'container_class'=> 'mobile-nav-menu-container',
-      'menu_class'     => 'mobile-nav-menu',
-      'fallback_cb'    => false,
-    ));
+   nine_menu()
     ?>
   </nav>
 </div>

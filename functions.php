@@ -97,6 +97,8 @@ if ( ! function_exists( 'nine_theme' ) ) {
 
         register_nav_menus(array(
             'main_menu' => 'Main Menu',
+            'mobile_menu' => 'Mobile Menu',
+
         ));
 
         add_theme_support('amp');
@@ -145,7 +147,11 @@ add_action('after_setup_theme', 'nine_theme', 1);
 */
 
 require get_template_directory() . '/inc/admin/tgm/required-plugins.php';
-require get_template_directory() . '/inc/post-meta.php';
+require get_template_directory() . '/inc/post-info.php';
+require get_template_directory() . '/inc/menu.php';
+require get_template_directory() . '/inc/post-thumbnail.php';
+require get_template_directory() . '/inc/social-media.php';
+
 
 if (function_exists('nine_core_activate')) {
     require(dirname(__FILE__) . '/inc/admin/sample-config.php');
