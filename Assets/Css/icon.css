@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("fonts/fa-brands-400.woff2") format("woff2"),
+  src: 
        url("fonts/fa-brands-400.ttf") format("truetype");
 }
 
@@ -12,8 +12,8 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("fonts/fa-solid-900.woff2") format("woff2"),
-       url("fonts/fa-solid-900.ttf") format("truetype");
+  src: 
+       url('fonts/fa-solid-900.ttf') format('truetype');
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("fonts/fa-regular-400.woff2") format("woff2"),
+  src: 
        url("fonts/fa-regular-400.ttf") format("truetype");
 }
 
@@ -118,6 +118,21 @@
   padding: 10px;
   border-radius: 10px;
   transition: all 0.50s ease;
+
+}
+
+@media (max-width:800px){
+
+  .share-icons li i{
+    font-size: 15px;
+    padding: 6px;
+  }
+
+  .share-icons{
+    display: flex;
+    list-style: none;
+    gap: 8px;
+  }
 
 }
 

@@ -29,7 +29,7 @@ function display_post_thumbnail() {
             echo '</div>';
         }
         
-    } elseif ( has_post_format( 'gallery' ) ) {        
+    } elseif ( has_post_format( 'gallery' ) ) {
         // Get and display the gallery images
         $gallery_images = get_post_meta( get_the_ID(), 'custom_metabox_gallery', true );
         if ( !empty($gallery_images) ) {
@@ -39,10 +39,16 @@ function display_post_thumbnail() {
                 echo '<li><img src="' . esc_url($image_url) . '" alt=""></li>';
             }
             echo '</ul>';
+            echo '<div class="gallery-dots">';
+            foreach ( $gallery_images as $index => $image_url ) {
+                echo '<span class="dot" data-index="' . $index . '"></span>';
+            }
             echo '</div>';
+            echo '</div>';
+            
         }
-        
-    } else {
+    }
+     else {
         if ( has_post_thumbnail() ) {
             echo '<div class="post-format-image-thumbnail">';
             the_post_thumbnail();

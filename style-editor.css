@@ -2262,7 +2262,7 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 }
 
 .widget a {
-	color: var(--primary-text);
+    color: var(--primary-text);
 }
 
 .widget a:hover {
@@ -2401,6 +2401,7 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 	font-style: inherit;
 	line-height: inherit;
 	padding-top: 10px;
+	margin: 0;
 }
 
 .wp-block-quote.has-background {

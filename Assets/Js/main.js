@@ -14,17 +14,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const gallery= document.querySelector('.post-format-gallery-thumbnail ul');
-    const galleryItems= document.querySelectorAll('.post-format-gallery-thumbnail li');
-    let currentIndex= 0;
-    const totalItems= galleryItems.length;
+    const gallery = document.querySelector('.post-format-gallery-thumbnail ul');
+    const galleryItems = document.querySelectorAll('.post-format-gallery-thumbnail li');
+    const dots = document.querySelectorAll('.gallery-dots .dot');
 
-    function showNextImage() {
-        currentIndex=(currentIndex + 1) % totalItems;
-        gallery.style.transform= `translateX(-${currentIndex * 100}%)`;
+    if (!gallery || !galleryItems.length || !dots.length) {
+        console.error('Required elements are missing.');
+        return;
     }
 
-    setInterval(showNextImage, 3000);
+    let currentIndex = 0;
+    const totalItems = galleryItems.length;
+
+    function showImage(index) {
+        if (!gallery) return;
+        gallery.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        showImage(currentIndex);
+    }
+
+    setInterval(showNextImage, 5000);
+    showImage(currentIndex);
 });
 
 

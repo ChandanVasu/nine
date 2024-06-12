@@ -21,7 +21,7 @@
 
             </div>
             
-            <div class='s-1-thumbnail thumbnail'>
+            <div class='s-1-thumbnail'>
                 <?php display_post_thumbnail(); // Display the post thumbnail ?>
             </div>
             <div class="post-content">

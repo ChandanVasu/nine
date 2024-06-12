@@ -327,30 +327,58 @@ a {
 }
 
 .post-format-gallery-thumbnail {
-	overflow: hidden;
-	white-space: nowrap;
-	width: 100%;
-	box-sizing: border-box;
-	position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
 }
 
 .post-format-gallery-thumbnail ul {
-	display: flex;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-	transition: transform 0.5s ease-in-out;
+    display: flex;
+    padding: 0;
+    margin: 0 !important;
+    list-style-type: none;
+    transition: transform 0.5s ease-in-out;
 }
 
 .post-format-gallery-thumbnail li {
-	flex: 0 0 100%;
+    flex: 0 0 100%;
 }
 
 .post-format-gallery-thumbnail img {
-	width: 100%;
-	display: block;
-	height: 100%;
+    width: 100%;
+    display: block;
+    height: 100%;
 }
+
+.gallery-dots {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #000000;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ffffff;
+    width: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
 
 .post-tags li {
 	list-style: none;
@@ -379,6 +407,10 @@ a {
 	background-color: var(--box-color);
 	border-radius: 10px;
 	margin-top: 10px;
+}
+
+.s-1-title{
+	margin-bottom: 10px;
 }
 
 .s-1-sidebar {
