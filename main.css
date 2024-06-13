@@ -277,10 +277,10 @@ a {
 	background-color: var(--fill-color);
 }
 
-.has-drop-cap:first-of-type:first-letter {
+/* .has-drop-cap:first-of-type:first-letter {
 	font-size: 80px;
 	font-weight: bold;
-}
+} */
 
 .comments-section {
 	margin-top: 30px;
