@@ -15,9 +15,13 @@ function enqueue_custom_assets() {
     wp_enqueue_style('custom-style', get_template_directory_uri() . '/main.css');
     wp_enqueue_style('editor-style', get_template_directory_uri() . '/style-editor.css');
     wp_enqueue_style('icon', get_template_directory_uri() . '/Assets/Css/icon.css');
+    wp_enqueue_style('video', get_template_directory_uri() . '/Assets/Css/video.css');
+
 
     // Enqueue JavaScript files
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/Js/main.js');
+    wp_enqueue_script('video-script', get_template_directory_uri() . '/Assets/Js/video.js');
+
 
     // If the script relies on jQuery, uncomment the following line
     // wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/js/main.js', array('jquery'), false, true);

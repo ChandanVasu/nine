@@ -105,3 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+// main.js
+document.addEventListener('DOMContentLoaded', function() {
+    const player = new Plyr('video');
+    window.player = player;
+});
