@@ -65,13 +65,13 @@ function display_html5_video( $video_url ) {
     $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url() : '';
 
     echo '<div class="post-format-video">';
-    echo '<video controls autoplay crossorigin playsinline poster="' . esc_url( $thumbnail_url ) . '">';
+    echo '<video controls autoplay  playsinline poster="' . esc_url( $thumbnail_url ) . '">';
     echo '<source src="' . esc_url( $video_url ) . '" type="video/mp4">';
     echo 'Your browser does not support the video tag.';
     echo '</video>';
     echo '</div>';
 }
-
+ 
 /**
  * Display a YouTube video.
  *

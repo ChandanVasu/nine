@@ -114,28 +114,65 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Single Post', 'nine-theme'),
             'subtitle' => esc_html__('This All Header Is All Ready Have Theme, If You Want Create New Header Please Select Custom Header', 'nine-theme'),
             'options' => array(
-                'header-one' => esc_html__('Header One', 'nine-theme'),
-                'header-two' => esc_html__('Header Two', 'nine-theme'),
-                'header-three' => esc_html__('Header Three', 'nine-theme'),
+                'single-template-one' => esc_html__('Single One', 'nine-theme'),
+                'single-template-two' => esc_html__('Single Two', 'nine-theme'),
+                'single-template-three' => esc_html__('Single Three', 'nine-theme'),
             ),
-            'default' => 'header-one',
+            'default' => 'single_template-one',
+        ),
+        // array(
+        //     'id' => 'video_post_type',
+        //     'type'   => 'section',
+        //     'class'  => 'nine-section-start',
+        //     'title'  => esc_html__('Video Post', 'nine-theme'),
+        //     'indent' => true,
+        // ),
+        // array(
+        //     'id' => 'gallary_post_type',
+        //     'type'   => 'section',
+        //     'class'  => 'nine-section-start',
+        //     'title'  => esc_html__('Gallary Post', 'nine-theme'),
+        //     'indent' => true,
+        // ),
+    ),
+));
+
+
+Redux::setSection($opt_name, array(
+    'title' => __('Category', 'nine-theme'),
+    'id' => 'category_page',
+    'desc' => __('Settings related to the theme Category Page.', 'nine-theme'),
+    'icon' => 'fa fa-solid fa-file',
+    'fields' => array(
+        array(
+            'id'       => 'category_template',
+            'type'     => 'select',
+            'title'    => esc_html__('Custom Category Page template', 'nine-theme'),
+            'subtitle' => esc_html__('Select the template to show in Category Page.', 'nine-theme'),
+            'desc'     => sprintf(
+                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme'),
+                '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>',
+                '</strong></a>'
+            ),
+            'options'  => nine_get_posts_id('nine_theme'),
+            'placeholder' => esc_html__('Select block', 'nine-theme'),
         ),
         array(
-            'id' => 'video_post_type',
-            'type'   => 'section',
-            'class'  => 'nine-section-start',
-            'title'  => esc_html__('Video Post', 'nine-theme'),
-            'indent' => true,
-        ),
-        array(
-            'id' => 'gallary_post_type',
-            'type'   => 'section',
-            'class'  => 'nine-section-start',
-            'title'  => esc_html__('Gallary Post', 'nine-theme'),
-            'indent' => true,
+            'id' => 'category_select',
+            'type' => 'select',
+            'title' => esc_html__('Category Page', 'nine-theme'),
+            'subtitle' => esc_html__('This All Header Is All Ready Have Theme, If You Want Create New Header Please Select Custom Header', 'nine-theme'),
+            'options' => array(
+                'post-one' => esc_html__('Category One', 'nine-theme'),
+                'post-two' => esc_html__('Category Two', 'nine-theme'),
+                'post-three' => esc_html__('Category Three', 'nine-theme'),
+            ),
+            'default' => 'category-one',
         ),
     ),
 ));
+
+
 
 Redux::setSection($opt_name, array(
     'title' => __('Footer Settings', 'nine-theme'),

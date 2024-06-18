@@ -1,21 +1,38 @@
 <?php
-/**
- * The template for displaying all single posts and attachments
- */
+get_header(); 
 
-get_header(); ?>
+$selected_style = nine_get_opt('single_select', 'single-one');
+$template_id = nine_get_opt('single_template');
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+// Function to load the appropriate single post template
+function load_single_template($style, $template_id) {
+    $template_path = 'template/single-post/' . $style;
 
-        <?php
-        // Start the loop.
-        while ( have_posts() ) : the_post();
-            get_template_part( 'template/single-post/single' );
-        endwhile;
-        ?>
+    // Check if Elementor content exists and is valid
+    if ($template_id && function_exists('display_nine_core_content')) {
+        $elementor_content = display_nine_core_content($template_id);
+        if ($elementor_content) {
+            echo apply_filters('nine-header', $elementor_content);
+            return;
+        }
+    }
 
-        </main><!-- .site-main -->
-    </div><!-- .content-area -->
+    // Fallback to the selected style template or default to 'single-one'
+    if (file_exists($template_path . '.php')) {
+        get_template_part($template_path);
+    } else {
+        get_template_part('template/single-post/single-one'); // Default fallback
+    }
+}
 
-<?php get_footer(); ?>
+// Check if there are posts
+if (have_posts()) :
+    while (have_posts()) : the_post();
+        load_single_template($selected_style, $template_id);
+    endwhile;
+else :
+    echo '<p>No content found</p>';
+endif;
+
+get_footer();
+?>

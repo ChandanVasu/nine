@@ -1,4 +1,6 @@
-<div class='s-1'>
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+    <div class='s-1'>
     <div class='s-1-post'>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class='s-1-header'>
@@ -47,4 +49,6 @@
     <div class='s-1-sidebar'>
         <?php get_sidebar(); // Load the sidebar ?>
     </div>
-</div>
+    </div>
+</main><!-- .site-main -->
+</div><!-- .content-area -->

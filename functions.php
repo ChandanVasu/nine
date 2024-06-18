@@ -155,6 +155,8 @@ require get_template_directory() . '/inc/post-info.php';
 require get_template_directory() . '/inc/menu.php';
 require get_template_directory() . '/inc/post-thumbnail.php';
 require get_template_directory() . '/inc/social-media.php';
+require get_template_directory() . '/inc/nine-functions.php';
+
 
 
 if (function_exists('nine_core_activate')) {

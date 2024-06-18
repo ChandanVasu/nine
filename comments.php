@@ -11,23 +11,14 @@ if (post_password_required()) {
         <h2 class="comments-title">
             <?php
             $comments_number = get_comments_number();
-            if ('1' === $comments_number) {
-                echo esc_html__('1 Reply', 'nine-theme');
-            } else {
-                printf(
-                    esc_html(_n(
-                        '%1$s Comment',  // Singular form
-                        '%1$s Comments',  // Plural form
-                        $comments_number,  // Number to determine singular/plural
-                        'nine-theme'  // Text domain for translation
-                    )),
+            echo esc_html(
+                sprintf(
+                    _nx('%1$s Reply', '%1$s Comments', $comments_number, 'comments title', 'nine-theme'),
                     number_format_i18n($comments_number)
-                );
-                
-            }
+                )
+            );
             ?>
         </h2><!-- .comments-title -->
-
 
         <?php the_comments_navigation(); ?>
 
@@ -37,33 +28,29 @@ if (post_password_required()) {
                 'style'       => 'ol',
                 'short_ping'  => true,
                 'avatar_size' => 42,
-                'callback'    => 'custom_comment_output' // Specify the custom callback function
+                'callback'    => 'custom_comment_output'
             ));
             ?>
         </ol><!-- .comment-list -->
 
-        <?php
-        the_comments_navigation();
+        <?php the_comments_navigation(); ?>
 
-        // If comments are closed and there are comments, let's leave a little note, shall we?
-        if (!comments_open()) :
-        ?>
+        <?php if (!comments_open()) : ?>
             <p class="no-comments"><?php esc_html_e('Comments are closed.', 'nine-theme'); ?></p>
         <?php endif; ?>
 
-    <?php endif; // Check for have_comments(). ?>
+    <?php endif; ?>
 
     <?php
-    $aria_req = ( $req ? " aria-required='true'" : '' ); // Define $aria_req variable
+    $aria_req = $req ? " aria-required='true'" : '';
 
-    // Modify the comment form to replace labels with placeholders
     comment_form(array(
         'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
         'title_reply_after'  => '</h2>',
-        'comment_field' => '<p class="comment-form-comment">' .
-                '<textarea id="comment" name="comment" placeholder="' . esc_attr__('Your Comment', 'nine-theme') . '" cols="45" rows="8" aria-required="true"></textarea>' .
-                '</p>',
-        'fields' => array(
+        'comment_field'      => '<p class="comment-form-comment">' .
+            '<textarea id="comment" name="comment" placeholder="' . esc_attr__('Your Comment', 'nine-theme') . '" cols="45" rows="8" aria-required="true"></textarea>' .
+            '</p>',
+        'fields'             => array(
             'author' => '<p class="comment-form-author">' .
                 '<input id="author" name="author" type="text" placeholder="' . esc_attr__('Name', 'nine-theme') . '" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />' .
                 '</p>',
@@ -81,7 +68,7 @@ if (post_password_required()) {
 // Custom callback function to display each comment with a custom class
 function custom_comment_output($comment, $args, $depth)
 {
-    $GLOBALS['comment-nine'] = $comment;
+    $GLOBALS['comment'] = $comment;
     ?>
     <li <?php comment_class('comment-class-nine'); ?> id="comment-<?php comment_ID(); ?>">
         <div class="comment-content-nine">
@@ -93,29 +80,24 @@ function custom_comment_output($comment, $args, $depth)
                         <a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>">
                             <?php printf('%1$s at %2$s', get_comment_date(), get_comment_time()); ?>
                         </a>
-                        <?php edit_comment_link(__('(Edit)', 'nine-theme'), '  ', ''); ?>
+                        <?php edit_comment_link(__('(Edit)', 'nine-theme'), ' ', ''); ?>
                     </div>
-                    <?php if ($comment->comment_approved == '0') : ?>
+                    <?php if ($comment->comment_approved === '0') : ?>
                         <p class="comment-awaiting-moderation-nine"><?php esc_html_e('Your comment is awaiting moderation.', 'nine-theme'); ?></p>
-                        <br />
                     <?php endif; ?>
                 </div>
             </div>
-
-
             <div class="comment-text-nine">
                 <?php comment_text(); ?>
             </div>
-
             <div class="reply-nine">
-                <?php
-                comment_reply_link(array_merge($args, array(
+                <?php comment_reply_link(array_merge($args, array(
                     'depth'     => $depth,
                     'max_depth' => $args['max_depth']
-                )));
-                ?>
+                ))); ?>
             </div>
         </div>
+    </li>
     <?php
 }
 ?>

@@ -29,7 +29,31 @@
 
 <?php
 
-get_template_part('template/header/header-defult');
+$selected_header = nine_get_opt('header_select', 'header-one');
+$template_id = nine_get_opt('header_template');
+
+// Function to load the appropriate header template
+function load_header_template($header_option, $template_id) {
+    // Check if the template ID exists and the function is available
+    if ($template_id && function_exists('display_nine_core_content')) {
+        $elementor_content = display_nine_core_content($template_id);
+        if ($elementor_content) {
+            echo apply_filters('nine-header', $elementor_content);
+            return;
+        }
+    }
+
+    // Fallback to the selected header template
+    $header_path = 'template/header/' . $header_option;
+    if (file_exists($header_path . '.php')) {
+        get_template_part($header_path);
+    } else {
+        get_template_part('template/header/header-one'); // Default fallback
+    }
+}
+
+// Execute the function
+load_header_template($selected_header, $template_id);
 
 ?>
 
