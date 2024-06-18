@@ -9,13 +9,10 @@
  * @package nine
  */
 
-
-
-?>
-<!doctype html>
+?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="<?php echo esc_attr(get_bloginfo('charset')); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
@@ -29,11 +26,10 @@
 
 <?php
 
-$selected_header = nine_get_opt('header_select', 'header-one');
 $template_id = nine_get_opt('header_template');
 
 // Function to load the appropriate header template
-function load_header_template($header_option, $template_id) {
+function load_header_template($template_id) {
     // Check if the template ID exists and the function is available
     if ($template_id && function_exists('display_nine_core_content')) {
         $elementor_content = display_nine_core_content($template_id);
@@ -43,20 +39,13 @@ function load_header_template($header_option, $template_id) {
         }
     }
 
-    // Fallback to the selected header template
-    $header_path = 'template/header/' . $header_option;
-    if (file_exists($header_path . '.php')) {
-        get_template_part($header_path);
-    } else {
-        get_template_part('template/header/header-one'); // Default fallback
-    }
+    // Fallback to the default header template
+    get_template_part('template/header/header-one'); // Default fallback
 }
 
 // Execute the function
-load_header_template($selected_header, $template_id);
+load_header_template($template_id);
 
 ?>
 
 </header>
-
-

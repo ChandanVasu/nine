@@ -112,7 +112,6 @@ big {
 }
 
 blockquote {
-	color: var(--link-text-color);
 	font-size: 1.8em;
 	line-height: 1.5;
 	margin-bottom: 35px;
@@ -125,7 +124,7 @@ blockquote {
 }
 
 blockquote .wp-block-pullquote__citation, blockquote .wp-block-quote__citation, blockquote cite, blockquote footer {
-	display: block;
+	/* display: block; */
 	font-family: var(--primary_text-font-family);
 	font-size: 1rem !important;
 	font-style: normal;
@@ -1483,7 +1482,6 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	color: var(--primary-color);
 	float: left;
 	font-size: 5.2em;
 	font-style: normal;

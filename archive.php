@@ -1,22 +1,20 @@
 <?php 
 get_header(); 
 
-$selected_header = nine_get_opt('category_select', 'single-one');
-$template_id = nine_get_opt('category_template');
+$selected_header = nine_get_opt('archive_select', 'post-one');
+$template_id = nine_get_opt('archive_template');
 
-// Function to load the appropriate template part based on the selected header
+// Function to get the template part based on the selected header
 function get_selected_single($header) {
     $template_path = 'template/archive/' . $header;
-    
-    // Check if the template part exists, otherwise fallback to 'post-one'
-    if (file_exists(get_template_directory() . '/' . $template_path . '.php')) {
+    if (locate_template($template_path . '.php')) {
         get_template_part($template_path);
     } else {
-        get_template_part('template/archive/post-one');
+        get_template_part('template/archive/post-one'); 
     }
 }
 
-// Check for Elementor content and load it if available
+// Check if template ID is available and the function exists
 if ($template_id && function_exists('display_nine_core_content')) {
     $elementor_content = display_nine_core_content($template_id);
     if ($elementor_content) {

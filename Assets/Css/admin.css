@@ -37,7 +37,7 @@
 
     body:not(.wp-customizer) .redux-main {
         display: block;
-        min-height: 900px !important;
+        /* min-height: 900px !important; */
         margin-left: 260px !important;
         padding-right: 20px;
         padding-left: 20px;
@@ -1126,6 +1126,10 @@
 
     .redux-container .redux-main .form-table tr.fold {
         border-bottom: none;
+    }
+
+    .redux-container .redux-main .form-table tr{
+        height: 100px;
     }
 
     .redux-main #redux-sticky {

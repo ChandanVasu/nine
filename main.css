@@ -151,9 +151,15 @@ a {
 	position: absolute;
 	left: 20px;
 	bottom: 20px;
+
+}
+
+.h-1-thumbnail .h-1-categories a{
 	background-color: var(--primary-color);
-	padding: 2px 15px;
+	padding: 5px 15px;
 	border-radius: 5px;
+	text-transform: uppercase;
+
 }
 
 .nine-categories a {
@@ -813,7 +819,7 @@ video{
 	line-height: 1.4;
 	margin: 0;
 	transition: background-size .3s;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .title a {
