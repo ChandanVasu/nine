@@ -893,3 +893,16 @@ video {
 	font-family: var(--primary_text-font-family);
 	font-size: 25px;
 }
+
+.box-cont-nine{
+	display: flex;
+	gap: 20px;
+}
+
+@media (max-width: 1000px){
+	.box-cont-nine{
+		display: flex;
+		gap: 20px;
+		flex-direction: column;
+	}
+}

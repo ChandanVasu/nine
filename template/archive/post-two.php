@@ -1,16 +1,20 @@
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-        <div class="archive-page-header">
-            <h1 class="archive-page-title">
-                <?php echo display_archive_title(); ?>
-            </h1>
-        </div>
 
-        <div class="post-grid-container">
-            <?php if (have_posts()) : ?>
-                <?php while (have_posts()) : the_post(); ?>
-                <div id="post-<?php the_ID(); ?>" <?php post_class('post-box'); ?>>
-                <div class="post-thumbnail thumbnail">
+        <div class='box-cont-nine'>
+
+            <div>
+                <div class="archive-page-header">
+                    <h1 class="archive-page-title">
+                        <?php echo display_archive_title(); ?>
+                    </h1>
+                </div>
+
+                <div class="post-grid-container">
+                    <?php if (have_posts()) : ?>
+                    <?php while (have_posts()) : the_post(); ?>
+                    <div id="post-<?php the_ID(); ?>" <?php post_class('post-box'); ?>>
+                        <div class="post-thumbnail thumbnail">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_post_thumbnail(); ?>
                             </a>
@@ -31,7 +35,8 @@
                             $author_id = get_the_author_meta('ID');
                             $author_avatar = get_avatar_url($author_id, ['size' => 32]);
                             ?>
-                            <img class="post-avatar author-avatar" src="<?php echo esc_url($author_avatar); ?>" alt="<?php echo esc_attr(get_the_author()); ?>">
+                            <img class="post-avatar author-avatar" src="<?php echo esc_url($author_avatar); ?>"
+                                alt="<?php echo esc_attr(get_the_author()); ?>">
                             <a class="post-author-name" href="<?php echo esc_url(get_author_posts_url($author_id)); ?>">
                                 <?php the_author(); ?>
                             </a>
@@ -40,15 +45,28 @@
                             </span>
                         </div>
                     </div>
-                <?php endwhile; ?>
-            <?php else : ?>
-                <p><?php esc_html_e('No posts found.', 'text-domain'); ?></p>
-            <?php endif; ?>
-            <?php wp_reset_postdata(); ?>
+                    <?php endwhile; ?>
+                    <?php else : ?>
+                    <p>
+                        <?php esc_html_e('No posts found.', 'text-domain'); ?>
+                    </p>
+                    <?php endif; ?>
+                    <?php wp_reset_postdata(); ?>
+                </div>
+
+                <div class="pagination">
+                    <?php custom_pagination(); ?>
+                </div>
+            </div>
+            <aside class='nine-sidebar'>
+
+                <?php get_sidebar(); ?>
+
+
+            </aside>
         </div>
 
-        <div class="pagination">
-            <?php custom_pagination(); ?>
-        </div>
+
+
     </main><!-- .site-main -->
 </div><!-- .content-area -->

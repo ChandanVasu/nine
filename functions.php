@@ -201,8 +201,14 @@ if ( ! function_exists( 'nine_styles_elementor' ) ) {
 
         $nine_theme = get_option("nine_theme");
         $template_ids = array_unique(array(
-            nine_get_opt('header_template')
-        ));
+            nine_get_opt('header_template'),
+            nine_get_opt('single_template'),
+            nine_get_opt('archive_template'),
+            nine_get_opt('category_template'),
+            nine_get_opt('author_template'),
+            nine_get_opt('search_template'),
+            nine_get_opt('footer_template'),
+            ));
 
         if ( ! empty($template_ids) ) {
             foreach ($template_ids as $template_id) {
