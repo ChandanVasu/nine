@@ -36,9 +36,9 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_assets');
 
 function theme_register_sidebar() {
     register_sidebar(array(
-        'name'          => __('Main Sidebar', 'nine-theme'),
+        'name'          => __('Main Sidebar', 'nine'),
         'id'            => 'main-sidebar',
-        'description'   => __('Widgets in this area will be shown on the sidebar.', 'nine-theme'),
+        'description'   => __('Widgets in this area will be shown on the sidebar.', 'nine'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
@@ -87,7 +87,7 @@ add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');
 
 if ( ! function_exists( 'nine_theme' ) ) {
     function nine_theme() {
-        load_theme_textdomain('nine-theme', get_template_directory() . '/languages');
+        load_theme_textdomain('nine', get_template_directory() . '/languages');
         if ( ! isset($GLOBALS['content_width']) ) {
             $GLOBALS['content_width'] = 1920;
         }
@@ -113,17 +113,17 @@ if ( ! function_exists( 'nine_theme' ) ) {
         // Adds support for editor color palette
         add_theme_support('editor-color-palette', array(
             array(
-                'name'  => esc_html__('Accent', 'nine-theme'),
+                'name'  => esc_html__('Accent', 'nine'),
                 'slug'  => 'accent',
                 'color' => '#ff0000',
             ),
             array(
-                'name'  => esc_html__('Dark', 'nine-theme'),
+                'name'  => esc_html__('Dark', 'nine'),
                 'slug'  => 'dark',
                 'color' => '#000000',
             ),
             array(
-                'name'  => esc_html__('Light', 'nine-theme'),
+                'name'  => esc_html__('Light', 'nine'),
                 'slug'  => 'light',
                 'color' => '#ffffff',
             ),

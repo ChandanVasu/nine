@@ -14,8 +14,8 @@ $args = array(
     'display_version'           => $theme->get('Version'),
     'menu_type'                 => 'menu',
     'allow_sub_menu'            => true,
-    'menu_title'                => esc_html__('Theme Options', 'nine-theme'),
-    'page_title'                => esc_html__('Theme Options', 'nine-theme'),
+    'menu_title'                => esc_html__('Theme Options', 'nine'),
+    'page_title'                => esc_html__('Theme Options', 'nine'),
     'google_api_key'            => '',
     'google_update_weekly'      => false,
     'async_typography'          => false,
@@ -66,44 +66,44 @@ add_action('redux/page/' . $opt_name . '/enqueue', 'add_panel_css');
 
 
 Redux::setSection($opt_name, array(
-    'title' => __('Header Setting', 'nine-theme'),
+    'title' => __('Header Setting', 'nine'),
     'id' => 'header_settings',
-    'desc' => __('Settings related to the theme Header.', 'nine-theme'),
+    'desc' => __('Settings related to the theme Header.', 'nine'),
     'icon' => 'fa fa-solid fa-star',
     'fields' => array(
         array(
             'id'       => 'header_template',
             'type'     => 'select',
-            'title'    => esc_html__('Custom Header template', 'nine-theme'),
-            'subtitle' => esc_html__('Select the template to show in Header.', 'nine-theme'),
-            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme'), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>'),
+            'title'    => esc_html__('Custom Header template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in Header.', 'nine'),
+            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>'),
             'options'  => nine_get_posts_id('nine_theme'),
-            'placeholder' => esc_html__('Select block', 'nine-theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
         ),
     ),
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Single Post', 'nine-theme'),
+    'title' => __('Single Post', 'nine'),
     'id' => 'single_post',
-    'desc' => __('Settings related to the theme Single Post.', 'nine-theme'),
+    'desc' => __('Settings related to the theme Single Post.', 'nine'),
     'icon' => 'fa fa-solid fa-file',
     'fields' => array(
         array(
             'id'       => 'single_template',
             'type'     => 'select',
-            'title'    => esc_html__('Custom Single Post template', 'nine-theme'),
-            'subtitle' => esc_html__('Select the template to show in Single Post.', 'nine-theme'),
-            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme'), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>'),
+            'title'    => esc_html__('Custom Single Post template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in Single Post.', 'nine'),
+            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>'),
             'options'  => nine_get_posts_id('nine_theme'),
-            'placeholder' => esc_html__('Select block', 'nine-theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
         ),
 
         array(
             'id'       => 'single_select',
             'type'     => 'image_select',
-            'title' => esc_html__('Single Post', 'nine-theme'),
-            'subtitle' => esc_html__('Select Post Template For Single Post', 'nine-theme'),
+            'title' => esc_html__('Single Post', 'nine'),
+            'subtitle' => esc_html__('Select Post Template For Single Post', 'nine'),
             'options'  => array(
                 'single-one'=> array(
                     'alt'   => 'Reght Sidebar', 
@@ -137,29 +137,29 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-    'title' => __('Archive Page', 'nine-theme'),
+    'title' => __('Archive Page', 'nine'),
     'id' => 'archive_page',
-    'desc' => __('Settings related to the theme Archive Page.', 'nine-theme'),
+    'desc' => __('Settings related to the theme Archive Page.', 'nine'),
     'icon' => 'fa fa-solid fa-folder',
     'fields' => array(
         array(
             'id'       => 'archive_template',
             'type'     => 'select',
-            'title'    => esc_html__('Custom Archive template', 'nine-theme'),
-            'subtitle' => esc_html__('Select the template to show in Archive Page.', 'nine-theme'),
+            'title'    => esc_html__('Custom Archive template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in Archive Page.', 'nine'),
             'desc'     => sprintf(
-                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme'),
+                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'),
                 '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>',
                 '</strong></a>'
             ),
             'options'  => nine_get_posts_id('nine_theme'),
-            'placeholder' => esc_html__('Select block', 'nine-theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
         ),
         array(
             'id'       => 'archive_select',
             'type'     => 'image_select',
-            'title' => esc_html__('Archive Page', 'nine-theme'),
-            'subtitle' => esc_html__('Select Post Template For archive Page', 'nine-theme'),
+            'title' => esc_html__('Archive Page', 'nine'),
+            'subtitle' => esc_html__('Select Post Template For archive Page', 'nine'),
             'options'  => array(
                 'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
@@ -184,29 +184,29 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Category Page', 'nine-theme'),
+    'title' => __('Category Page', 'nine'),
     'id' => 'category_page',
-    'desc' => __('Settings related to the theme Category Page.', 'nine-theme'),
+    'desc' => __('Settings related to the theme Category Page.', 'nine'),
     'icon' => 'fa fa-solid fa-hashtag',
     'fields' => array(
         array(
             'id'       => 'category_template',
             'type'     => 'select',
-            'title'    => esc_html__('Custom Category template', 'nine-theme'),
-            'subtitle' => esc_html__('Select the template to show in Category Page.', 'nine-theme'),
+            'title'    => esc_html__('Custom Category template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in Category Page.', 'nine'),
             'desc'     => sprintf(
-                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme'),
+                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'),
                 '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>',
                 '</strong></a>'
             ),
             'options'  => nine_get_posts_id('nine_theme'),
-            'placeholder' => esc_html__('Select block', 'nine-theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
         ),
         array(
             'id'       => 'category_select',
             'type'     => 'image_select',
-            'title' => esc_html__('Category Page', 'nine-theme'),
-            'subtitle' => esc_html__('Select Post Template For Category Page', 'nine-theme'),
+            'title' => esc_html__('Category Page', 'nine'),
+            'subtitle' => esc_html__('Select Post Template For Category Page', 'nine'),
             'options'  => array(
                 'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
@@ -231,29 +231,29 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Author Page', 'nine-theme'),
+    'title' => __('Author Page', 'nine'),
     'id' => 'author_page',
-    'desc' => __('Settings related to the theme Author Page.', 'nine-theme'),
+    'desc' => __('Settings related to the theme Author Page.', 'nine'),
     'icon' => 'fa fa-solid fa-user-tie',
     'fields' => array(
         array(
             'id'       => 'author_template',
             'type'     => 'select',
-            'title'    => esc_html__('Custom Author template', 'nine-theme'),
-            'subtitle' => esc_html__('Select the template to show in Author Page.', 'nine-theme'),
+            'title'    => esc_html__('Custom Author template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in Author Page.', 'nine'),
             'desc'     => sprintf(
-                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme'),
+                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'),
                 '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>',
                 '</strong></a>'
             ),
             'options'  => nine_get_posts_id('nine_theme'),
-            'placeholder' => esc_html__('Select block', 'nine-theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
         ),
         array(
             'id'       => 'author_select',
             'type'     => 'image_select',
-            'title' => esc_html__('Author Page', 'nine-theme'),
-            'subtitle' => esc_html__('Select Post Template For Author Page', 'nine-theme'),
+            'title' => esc_html__('Author Page', 'nine'),
+            'subtitle' => esc_html__('Select Post Template For Author Page', 'nine'),
             'options'  => array(
                 'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
@@ -278,29 +278,29 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Search', 'nine-theme'),
+    'title' => __('Search Page', 'nine'),
     'id' => 'search_page',
-    'desc' => __('Settings related to the theme Search Page.', 'nine-theme'),
+    'desc' => __('Settings related to the theme Search Page.', 'nine'),
     'icon' => 'fa fa-solid fa-magnifying-glass',
     'fields' => array(
         array(
             'id'       => 'search_template',
             'type'     => 'select',
-            'title'    => esc_html__('Custom Search template', 'nine-theme'),
-            'subtitle' => esc_html__('Select the template to show in Search Page.', 'nine-theme'),
+            'title'    => esc_html__('Custom Search template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in Search Page.', 'nine'),
             'desc'     => sprintf(
-                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine-theme'),
+                esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'),
                 '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>',
                 '</strong></a>'
             ),
             'options'  => nine_get_posts_id('nine_theme'),
-            'placeholder' => esc_html__('Select block', 'nine-theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
         ),
         array(
             'id'       => 'search_select',
             'type'     => 'image_select',
-            'title' => esc_html__('Search Page', 'nine-theme'),
-            'subtitle' => esc_html__('Select Post Template For Search Page', 'nine-theme'),
+            'title' => esc_html__('Search Page', 'nine'),
+            'subtitle' => esc_html__('Select Post Template For Search Page', 'nine'),
             'options'  => array(
                 'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
@@ -325,26 +325,26 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Footer Settings', 'nine-theme'),
+    'title' => __('Footer Settings', 'nine'),
     'id' => 'footer_settings',
-    'desc' => __('Settings related to the theme footer.', 'nine-theme'),
+    'desc' => __('Settings related to the theme footer.', 'nine'),
     'icon' => 'el el-arrow-down',
     'fields' => array(
         array(
             'id'       => 'footer_template',
             'type'     => 'select',
-            'title'    => esc_html__('Footer template', 'nine-theme'),
-            'subtitle' => esc_html__('Select Custom Footer Template', 'nine-theme'),
-            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sblock builder%2$s.', 'nine-theme'), '<a target="_blank" href="' . admin_url('edit.php?post_type=th90_block') . '"><strong>', '</strong></a>'),
+            'title'    => esc_html__('Footer template', 'nine'),
+            'subtitle' => esc_html__('Select Custom Footer Template', 'nine'),
+            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sblock builder%2$s.', 'nine'), '<a target="_blank" href="' . admin_url('edit.php?post_type=th90_block') . '"><strong>', '</strong></a>'),
             'options'  => nine_get_posts_id('nine_theme'),
-            'placeholder' => esc_html__('Select block', 'nine-theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
         ),
         array(
             'id' => 'footer_text',
             'type' => 'text',
-            'title' => esc_html__('Footer Text', 'nine-theme'),
-            'desc' => esc_html__('Custom footer text', 'nine-theme'),
-            'default' => esc_html__('All Rights Reserved.', 'nine-theme'),
+            'title' => esc_html__('Footer Text', 'nine'),
+            'desc' => esc_html__('Custom footer text', 'nine'),
+            'default' => esc_html__('All Rights Reserved.', 'nine'),
             'hint' => array(
                 'content' => 'This Text Show At Footer If You Are Not create Custon Footer Then you change Footer Text.',
             ),
@@ -352,23 +352,42 @@ Redux::setSection($opt_name, array(
     ),
 ));
 
+
 Redux::setSection($opt_name, array(
-    'title' => __('Typography', 'nine-theme'),
+    'title' => __('404 Setting', 'nine'),
+    'id' => '404_settings',
+    'desc' => __('Settings related to the theme 404.', 'nine'),
+    'icon' => 'fa fa-solid fa-circle-exclamation',
+    'fields' => array(
+        array(
+            'id'       => '404_template',
+            'type'     => 'select',
+            'title'    => esc_html__('Custom 404 template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in 404.', 'nine'),
+            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>'),
+            'options'  => nine_get_posts_id('nine_theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
+        ),
+    ),
+));
+
+Redux::setSection($opt_name, array(
+    'title' => __('Typography', 'nine'),
     'id' => 'Typography_settings',
-    'desc' => __('Settings related to the general appearance of the theme.', 'nine-theme'),
+    'desc' => __('Settings related to the general appearance of the theme.', 'nine'),
     'icon' => 'fa-solid fa-paintbrush',
     'fields' => array(
         array(
             'id' => 'section_start_global_color',
             'type'   => 'section',
             'class'  => 'nine-section-start',
-            'title'  => esc_html__('Highlight Elements', 'nine-theme'),
+            'title'  => esc_html__('Highlight Elements', 'nine'),
             'indent' => true,
         ),
         array(
             'id' => 'body_bg_color',
             'type' => 'color',
-            'title' => esc_html__('Body Background Color', 'nine-theme'),
+            'title' => esc_html__('Body Background Color', 'nine'),
             'default' => '#FFFFFF',
             'validate' => 'color',
             'subtitle' => '',
@@ -378,7 +397,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'primary_colors',
             'type' => 'color',
-            'title' => esc_html__('Primary Color', 'nine-theme'),
+            'title' => esc_html__('Primary Color', 'nine'),
             'default' => '#0D1BE5',
             'validate' => 'color',
             'subtitle' => '',
@@ -388,7 +407,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'primary_text',
             'type' => 'color',
-            'title' => esc_html__('Primary Text Color', 'nine-theme'),
+            'title' => esc_html__('Primary Text Color', 'nine'),
             'default' => '#FFFFFF',
             'validate' => 'color',
             'subtitle' => '',
@@ -399,7 +418,7 @@ Redux::setSection($opt_name, array(
             'id' => 'header_background_colors',
             'type' => 'color',
             'transparent' => false,
-            'title' => esc_html__('Header Background Color', 'nine-theme'),
+            'title' => esc_html__('Header Background Color', 'nine'),
             'default' => '#FFFFFF',
             'validate' => 'color',
             'subtitle' => '',
@@ -409,7 +428,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'box_color',
             'type' => 'color',
-            'title' => esc_html__('Box Background Color', 'nine-theme'),
+            'title' => esc_html__('Box Background Color', 'nine'),
             'default' => '#FFFFFF',
             'validate' => 'color',
             'subtitle' => '',

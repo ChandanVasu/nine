@@ -60,14 +60,14 @@ function nine_theme_register_required_plugins() {
             'external_url' => 'https://wordpress.org/plugins/elementor/',
         ),
 		array(
-			'name'               => esc_html__('Envato Market', 'nine-theme'),
+			'name'               => esc_html__('Envato Market', 'nine'),
 			'slug'               => 'envato-market',
 			'source'             => esc_url( 'https://goo.gl/pkJS33' ),
             'external_url'       => esc_url( 'https://goo.gl/pkJS33' ),
 			'required'           => true,
 		), 
 		array(
-            'name'     => esc_html__('One User Avatar | User Profile Picture', 'nine-theme'),
+            'name'     => esc_html__('One User Avatar | User Profile Picture', 'nine'),
             'slug'     => 'one-user-avatar',
             'required' => true,
         ),
@@ -96,7 +96,7 @@ function nine_theme_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'nine-theme',
+		'id'           => 'nine',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,

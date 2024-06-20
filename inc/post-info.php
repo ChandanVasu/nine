@@ -46,8 +46,8 @@ function custom_pagination($query = null) {
         'current'   => max(1, get_query_var('paged'), get_query_var('page')),
         'total'     => $query->max_num_pages,
         'prev_next' => true,
-        'prev_text' => __('&#9664;', 'nine-theme'),
-        'next_text' => __('&#9654;', 'nine-theme'),
+        'prev_text' => __('&#9664;', 'nine'),
+        'next_text' => __('&#9654;', 'nine'),
     );
 
     echo paginate_links($paginate_args);

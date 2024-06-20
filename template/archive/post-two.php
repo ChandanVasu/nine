@@ -48,7 +48,7 @@
                     <?php endwhile; ?>
                     <?php else : ?>
                     <p>
-                        <?php esc_html_e('No posts found.', 'text-domain'); ?>
+                        <?php esc_html_e('No posts found.', ''); ?>
                     </p>
                     <?php endif; ?>
                     <?php wp_reset_postdata(); ?>

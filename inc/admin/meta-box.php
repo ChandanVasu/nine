@@ -5,23 +5,23 @@ function custom_metabox_example() {
 
     $cmb = new_cmb2_box( array(
         'id'           => $prefix . 'metabox',
-        'title'        => __( 'Custom Metabox', 'nine-theme' ),
+        'title'        => __( 'Custom Metabox', 'nine' ),
         'object_types' => array( 'post' ), // Post type(s) where the metabox will be displayed
     ) );
 
 
     // Add a field for the video URL
     $cmb->add_field( array(
-        'name' => __( 'Video URL', 'nine-theme' ),
-        'desc' => __( 'Enter the URL for the video', 'nine-theme' ),
+        'name' => __( 'Video URL', 'nine' ),
+        'desc' => __( 'Enter the URL for the video', 'nine' ),
         'id'   => $prefix . 'video_url',
         'type' => 'text_url',
     ) );
 
     // Add a field for the gallery images
     $cmb->add_field( array(
-        'name' => __( 'Gallery Images', 'nine-theme' ),
-        'desc' => __( 'Upload or add multiple images for the gallery', 'nine-theme' ),
+        'name' => __( 'Gallery Images', 'nine' ),
+        'desc' => __( 'Upload or add multiple images for the gallery', 'nine' ),
         'id'   => $prefix . 'gallery',
         'type' => 'file_list',
     ) );
