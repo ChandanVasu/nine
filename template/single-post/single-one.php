@@ -35,6 +35,8 @@
             <?php nine_post_tags(); // Display post tags ?>
         </div>
 
+        <?php custom_post_navigation() ?>
+
         <div class='s-1-comment'>
             <?php
             if (comments_open() || get_comments_number()) :

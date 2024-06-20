@@ -24,3 +24,12 @@ function display_archive_title() {
     }
     return $title;
 }
+
+
+function nine_enqueue_comment_reply() {
+    if ( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1 ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'nine_enqueue_comment_reply' );
+

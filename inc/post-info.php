@@ -50,7 +50,7 @@ function custom_pagination($query = null) {
         'next_text' => __('&#9654;', 'nine'),
     );
 
-    echo paginate_links($paginate_args);
+    echo the_posts_pagination($paginate_args);
 }
 
 
@@ -73,5 +73,64 @@ function display_post_categories() {
 }
 
 
+function nine_link_pages() {
 
 
+	$args = array(
+		'before'           => '<div class="page-links"><span class="page-link-text">' . esc_html__('More pages: ', 'nine') . '</span>',
+		'after'            => '</div>',
+		'link_before'      => '<span class="page-link">',
+		'link_after'       => '</span>',
+		'next_or_number'   => 'number',
+		'separator'        => '  ',
+		'nextpagelink'     => esc_html__('Next ', 'nine') . '<I class="ts-icon ts-icon-angle-right"></i>',
+		'previouspagelink' => '<I class="ts-icon ts-icon-angle-left"></i>' . esc_html__(' Previous', 'nine'),
+	);
+	wp_link_pages($args);
+}
+
+
+
+/**
+ * Display navigation to next/previous post when applicable.
+ */
+function custom_post_navigation() {
+    // Get the previous and next post
+    $previous_post = get_previous_post();
+    $next_post = get_next_post();
+
+    if ( ! $previous_post && ! $next_post ) {
+        return; // If there are no adjacent posts, exit early.
+    }
+    ?>
+    <nav class="navigation post-navigation" role="navigation">
+        <div class="nav-links">
+            <?php if ( $previous_post ) : ?>
+                <div class="nav-previous">
+                    <a href="<?php echo get_permalink( $previous_post->ID ); ?>" rel="prev">
+                        <?php if ( has_post_thumbnail( $previous_post->ID ) ) : ?>
+                            <div class="nav-thumbnail">
+                                <?php echo get_the_post_thumbnail( $previous_post->ID, 'thumbnail' ); ?>
+                            </div>
+                        <?php endif; ?>
+                        <span class="nav-title"><?php echo get_the_title( $previous_post->ID ); ?></span>
+                    </a>
+                </div>
+            <?php endif; ?>
+            
+            <?php if ( $next_post ) : ?>
+                <div class="nav-next">
+                    <a href="<?php echo get_permalink( $next_post->ID ); ?>" rel="next">
+                        <?php if ( has_post_thumbnail( $next_post->ID ) ) : ?>
+                            <div class="nav-thumbnail">
+                                <?php echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' ); ?>
+                            </div>
+                        <?php endif; ?>
+                        <span class="nav-title"><?php echo get_the_title( $next_post->ID ); ?></span>
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div><!-- .nav-links -->
+    </nav><!-- .navigation -->
+    <?php
+}
