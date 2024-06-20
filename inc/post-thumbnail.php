@@ -65,9 +65,9 @@ function display_html5_video( $video_url ) {
     $thumbnail_url = has_post_thumbnail() ? get_the_post_thumbnail_url() : '';
 
     echo '<div class="post-format-video">';
-    echo '<video controls autoplay  playsinline poster="' . esc_url( $thumbnail_url ) . '">';
+    echo '<video controls autoplay playsinline poster="' . esc_url( $thumbnail_url ) . '">';
     echo '<source src="' . esc_url( $video_url ) . '" type="video/mp4">';
-    echo 'Your browser does not support the video tag.';
+    echo esc_html__( 'Your browser does not support the video tag.', 'nine' );
     echo '</video>';
     echo '</div>';
 }
@@ -95,12 +95,12 @@ function display_gallery_thumbnail() {
         echo '<div class="post-format-gallery-thumbnail">';
         echo '<ul>';
         foreach ( $gallery_images as $image_url ) {
-            echo '<li><img src="' . esc_url( $image_url ) . '" alt=""></li>';
+            echo '<li><img src="' . esc_url( $image_url ) . '" alt="' . esc_attr__( 'Gallery image', 'nine' ) . '"></li>';
         }
         echo '</ul>';
         echo '<div class="gallery-dots">';
         foreach ( $gallery_images as $index => $image_url ) {
-            echo '<span class="dot" data-index="' . $index . '"></span>';
+            echo '<span class="dot" data-index="' . esc_attr( $index ) . '"></span>';
         }
         echo '</div>';
         echo '</div>';

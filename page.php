@@ -1,24 +1,53 @@
 <?php
 /**
  * The template for displaying all pages
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  * @package Nine
  */
 
-get_header(); ?>
+get_header();
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+// Get the template ID and selected header from options
+$template_id = nine_get_opt('page_template');
+$nine_template = nine_get_opt('page_select', 'single-one');
 
+// Function to get the template part based on the selected header
+if (!function_exists('get_selected_single')) {
+    function get_selected_single($nine_template) {
+        $template_path = 'template/single-post/' . sanitize_file_name($nine_template);
+        if (locate_template($template_path . '.php')) {
+            get_template_part($template_path);
+        } else {
+            // Default fallback template
+            get_template_part('template/single-post/single-one');
+        }
+    }
+}
+
+// Check if there are posts
+if (have_posts()) :
+    ?>
+    <div class="nine-page">
         <?php
-        // Start the loop.
-        while ( have_posts() ) : the_post();
-            get_template_part( 'template/page/page', 'one' );
+        while (have_posts()) : the_post();
+            if ($template_id && function_exists('display_nine_core_content')) {
+                $elementor_content = display_nine_core_content($template_id);
+                if ($elementor_content) {
+                    echo apply_filters('nine-header', $elementor_content); // Assume content is properly escaped in filter
+                    continue; // Move to the next post
+                }
+            }
+            get_selected_single($nine_template);
         endwhile;
         ?>
+    </div>
+    <?php
+else :
+    ?>
+    <p><?php esc_html_e('No content found', 'nine'); ?></p>
+    <?php
+endif;
 
-        </main><
-    </div><!-- .content-area -->
-
-<?php get_footer(); ?>
+get_footer();
+?>

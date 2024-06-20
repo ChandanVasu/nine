@@ -84,10 +84,10 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Single Post', 'nine'),
+    'title' => __('Post', 'nine'),
     'id' => 'single_post',
     'desc' => __('Settings related to the theme Single Post.', 'nine'),
-    'icon' => 'fa fa-solid fa-file',
+    'icon' => 'fa fa-brands fa-readme',
     'fields' => array(
         array(
             'id'       => 'single_template',
@@ -117,14 +117,64 @@ Redux::setSection($opt_name, array(
                     'alt'   => 'No Side Bar', 
                     'img'   => get_template_directory_uri() . '/Assets/images/no-sidebar.jpg'
                 ),
-                'single-four'=> array(
-                    'alt'   => 'Title At Image', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/title-at-image.jpg'
+                // 'single-four'=> array(
+                //     'alt'   => 'Title At Image', 
+                //     'img'   => get_template_directory_uri() . '/Assets/images/title-at-image.jpg'
+                // ),
+                // 'single-five'=> array(
+                //     'alt'   => 'Below SIdeBAr', 
+                //     'img'   => get_template_directory_uri() . '/Assets/images/below-sidebar.jpg'
+                // ),
+            ),
+            'default' => 'single-one'
+        ),
+
+    ),
+));
+
+
+Redux::setSection($opt_name, array(
+    'title' => __('Page', 'nine'),
+    'id' => 'page_setting',
+    'desc' => __('Settings related to the theme Single Post.', 'nine'),
+    'icon' => 'fa fa-solid fa-file',
+    'fields' => array(
+        array(
+            'id'       => 'page_template',
+            'type'     => 'select',
+            'title'    => esc_html__('Custom Page Post template', 'nine'),
+            'subtitle' => esc_html__('Select the template to show in Page Post.', 'nine'),
+            'desc'     => sprintf(esc_html__('You can create the custom template from %1$sTemplate Builder%2$s.', 'nine'), '<a target="_blank" href="' . admin_url('edit.php?post_type=nine_theme') . '"><strong>', '</strong></a>'),
+            'options'  => nine_get_posts_id('nine_theme'),
+            'placeholder' => esc_html__('Select block', 'nine'),
+        ),
+
+        array(
+            'id'       => 'page_select',
+            'type'     => 'image_select',
+            'title' => esc_html__('Page Post', 'nine'),
+            'subtitle' => esc_html__('Select Post Template For Page Post', 'nine'),
+            'options'  => array(
+                'single-one'=> array(
+                    'alt'   => 'Reght Sidebar', 
+                    'img'   => get_template_directory_uri() . '/Assets/images/left-sidebar.jpg'
                 ),
-                'single-five'=> array(
-                    'alt'   => 'Below SIdeBAr', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/below-sidebar.jpg'
+                'single-two'=> array(
+                    'alt'   => 'Left Sidebar', 
+                    'img'   => get_template_directory_uri() . '/Assets/images/right-sidebar.jpg'
                 ),
+                'single-three'=> array(
+                    'alt'   => 'No Side Bar', 
+                    'img'   => get_template_directory_uri() . '/Assets/images/no-sidebar.jpg'
+                ),
+                // 'single-four'=> array(
+                //     'alt'   => 'Title At Image', 
+                //     'img'   => get_template_directory_uri() . '/Assets/images/title-at-image.jpg'
+                // ),
+                // 'single-five'=> array(
+                //     'alt'   => 'Below SIdeBAr', 
+                //     'img'   => get_template_directory_uri() . '/Assets/images/below-sidebar.jpg'
+                // ),
             ),
             'default' => 'single-one'
         ),
@@ -354,7 +404,7 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-    'title' => __('404 Setting', 'nine'),
+    'title' => __('Error-404', 'nine'),
     'id' => '404_settings',
     'desc' => __('Settings related to the theme 404.', 'nine'),
     'icon' => 'fa fa-solid fa-circle-exclamation',
