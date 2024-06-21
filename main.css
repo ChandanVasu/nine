@@ -612,7 +612,7 @@ video {
 .blog-post-one,
 .blog-post-two {
 	display: flex;
-	gap: 50px;
+	gap: 20px;
 }
 
 .blog-post-comment {
@@ -695,7 +695,7 @@ video {
 
 .s-p-nav-thumbnail {
 	margin-right: 15px;
-	width: 25%;
+	width: 45%;
 }
 
 .s-p-nav-thumbnail img {

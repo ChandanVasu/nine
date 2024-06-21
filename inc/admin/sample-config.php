@@ -107,15 +107,15 @@ Redux::setSection($opt_name, array(
             'options'  => array(
                 'single-one'=> array(
                     'alt'   => 'Reght Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/left-sidebar.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/single-right-sidebar.png'
                 ),
                 'single-two'=> array(
                     'alt'   => 'Left Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/right-sidebar.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/single-left-sidebar.png'
                 ),
                 'single-three'=> array(
                     'alt'   => 'No Side Bar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/no-sidebar.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/single-no-sidebar.png'
                 ),
                 // 'single-four'=> array(
                 //     'alt'   => 'Title At Image', 
@@ -157,15 +157,15 @@ Redux::setSection($opt_name, array(
             'options'  => array(
                 'single-one'=> array(
                     'alt'   => 'Reght Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/left-sidebar.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/single-right-sidebar.png'
                 ),
                 'single-two'=> array(
                     'alt'   => 'Left Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/right-sidebar.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/single-left-sidebar.png'
                 ),
                 'single-three'=> array(
                     'alt'   => 'No Side Bar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/no-sidebar.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/single-no-sidebar.png'
                 ),
                 // 'single-four'=> array(
                 //     'alt'   => 'Title At Image', 
@@ -213,19 +213,19 @@ Redux::setSection($opt_name, array(
             'options'  => array(
                 'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/grid-post.png'
                 ),
                 'post-two'=> array(
                     'alt'   => 'Left Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-grid-post.png'
                 ),
                 'post-three'=> array(
                     'alt'   => 'No Side Bar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/list-post.png'
                 ),
                 'post-four'=> array(
                     'alt'   => 'Title At Image', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-list-post.png'
                 ),
             ),
             'default' => 'post-one'
@@ -258,21 +258,21 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Category Page', 'nine'),
             'subtitle' => esc_html__('Select Post Template For Category Page', 'nine'),
             'options'  => array(
-                'post-one'=> array(
+               'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/grid-post.png'
                 ),
                 'post-two'=> array(
                     'alt'   => 'Left Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-grid-post.png'
                 ),
                 'post-three'=> array(
                     'alt'   => 'No Side Bar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/list-post.png'
                 ),
                 'post-four'=> array(
                     'alt'   => 'Title At Image', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-list-post.png'
                 ),
             ),
             'default' => 'post-one'
@@ -307,19 +307,19 @@ Redux::setSection($opt_name, array(
             'options'  => array(
                 'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/grid-post.png'
                 ),
                 'post-two'=> array(
                     'alt'   => 'Left Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-grid-post.png'
                 ),
                 'post-three'=> array(
                     'alt'   => 'No Side Bar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/list-post.png'
                 ),
                 'post-four'=> array(
                     'alt'   => 'Title At Image', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-list-post.png'
                 ),
             ),
             'default' => 'post-one'
@@ -352,21 +352,21 @@ Redux::setSection($opt_name, array(
             'title' => esc_html__('Search Page', 'nine'),
             'subtitle' => esc_html__('Select Post Template For Search Page', 'nine'),
             'options'  => array(
-                'post-one'=> array(
+               'post-one'=> array(
                     'alt'   => 'Reght Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/grid-post.png'
                 ),
                 'post-two'=> array(
                     'alt'   => 'Left Sidebar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-left-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-grid-post.png'
                 ),
                 'post-three'=> array(
                     'alt'   => 'No Side Bar', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-grid.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/list-post.png'
                 ),
                 'post-four'=> array(
                     'alt'   => 'Title At Image', 
-                    'img'   => get_template_directory_uri() . '/Assets/images/archive-no-sidebar-list.jpg'
+                    'img'   => get_template_directory_uri() . '/Assets/images/sidebar-list-post.png'
                 ),
             ),
             'default' => 'post-one'
@@ -392,13 +392,14 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'footer_text',
             'type' => 'text',
-            'title' => esc_html__('Footer Text', 'nine'),
+            'title' => esc_html__('Copyright text default', 'nine'),
             'desc' => esc_html__('Custom footer text', 'nine'),
-            'default' => esc_html__('All Rights Reserved.', 'nine'),
+            'default' => esc_html__('Designed by VasuTheme - Newspaper WordPress Theme.', 'nine'),
             'hint' => array(
                 'content' => 'This Text Show At Footer If You Are Not create Custon Footer Then you change Footer Text.',
             ),
         ),
+
     ),
 ));
 
