@@ -3,6 +3,7 @@
 
 
 <!-- Mobile Menu -->
+<div class='theme-menu'>
 <div class="nine-menu-mobile">
   <div class='nine-menu-header'>
     <!-- Logo -->
@@ -34,4 +35,5 @@
    nine_menu()
     ?>
   </nav>
+</div>
 </div>

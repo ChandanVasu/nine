@@ -69,7 +69,7 @@ Redux::setSection($opt_name, array(
     'title' => __('Header Setting', 'nine'),
     'id' => 'header_settings',
     'desc' => __('Settings related to the theme Header.', 'nine'),
-    'icon' => 'fa fa-solid fa-star',
+    'icon' => 'fa fa-solid fa-caret-up',
     'fields' => array(
         array(
             'id'       => 'header_template',
@@ -378,7 +378,7 @@ Redux::setSection($opt_name, array(
     'title' => __('Footer Settings', 'nine'),
     'id' => 'footer_settings',
     'desc' => __('Settings related to the theme footer.', 'nine'),
-    'icon' => 'el el-arrow-down',
+    'icon' => 'fa fa-solid fa-caret-down',
     'fields' => array(
         array(
             'id'       => 'footer_template',

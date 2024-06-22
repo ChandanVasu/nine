@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    var adminBar= document.getElementById('wpadminbar');
+    var adminBar = document.getElementById('wpadminbar');
 
     adminBar.addEventListener('mouseenter', function() {
-        adminBar.style.zIndex= '999999999999';
+        adminBar.style.zIndex = '999999999999';
     });
 
     adminBar.addEventListener('mouseleave', function() {
-        adminBar.style.zIndex= '';
+        adminBar.style.zIndex = '';
     });
 
 });
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const gallery = document.querySelector('.post-format-gallery-thumbnail ul');
@@ -42,52 +41,40 @@ document.addEventListener('DOMContentLoaded', function() {
     showImage(currentIndex);
 });
 
-
-
-
- function closeHamburger() {
+function closeHamburger() {
     const menu = document.querySelector('.nine-menu-mobile');
 
-    const offcanvas = document.querySelector('.offcanvas-full');
-    
-    offcanvas.style.visibility = "visible"
     menu.style.display = 'block'; // Show the menu
     setTimeout(() => {
-      menu.classList.add('visible'); // Add class to trigger the transition
+        menu.classList.add('visible'); // Add class to trigger the transition
     }, 10); // Small timeout to ensure display property takes effect before transition
-  }
-  
-  function callHamburger() {
+}
+
+function callHamburger() {
     const menu = document.querySelector('.nine-menu-mobile');
-    const offcanvas = document.querySelector('.offcanvas-full');
-    
-    offcanvas.style.visibility = "hidden"
 
     menu.classList.remove('visible'); // Remove class to trigger the transition
     setTimeout(() => {
-      menu.style.display = 'none'; // Hide the menu after transition completes
+        menu.style.display = 'none'; // Hide the menu after transition completes
     }, 500); // Match the duration of the transition
-  }
+}
 
-
-
-
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Select all menu items that have a sub-menu
     const menuItems = document.querySelectorAll('.menu-item-has-children');
-  
+
     // Loop through each menu item
     menuItems.forEach(function(menuItem) {
         const anchor = menuItem.querySelector('a');
         if (anchor) {
             // Add the submenu-icon class to the <a> tag
             anchor.classList.add('submenu-icon');
-  
+
             // Create a span element for the icon
             const icon = document.createElement('span');
             icon.classList.add('submenu-icon-span');
             anchor.appendChild(icon);
-  
+
             // Add click event to the icon
             icon.addEventListener('click', function(event) {
                 event.preventDefault(); // Prevent default action
@@ -103,9 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-  });
-  
-// main.js
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     const player = new Plyr('video');
     window.player = player;

@@ -27,4 +27,3 @@
     </header>
 </div>
 
-<div class='offcanvas-full'></div>

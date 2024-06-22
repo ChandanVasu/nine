@@ -437,17 +437,7 @@ video {
 	transform: translateX(0);
 }
 
-.offcanvas-full {
-	background-color: rgb(236 240 243);
-	height: 100%;
-	left: 0;
-	opacity: 0.99;
-	position: fixed;
-	top: 0;
-	visibility: hidden;
-	width: 100%;
-	z-index: 1;
-}
+
 
 .pagination {
 	margin-top: 20px;
