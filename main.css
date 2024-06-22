@@ -438,7 +438,6 @@ video {
 }
 
 
-
 .pagination {
 	margin-top: 20px;
 	text-align: center;
@@ -839,12 +838,12 @@ video {
 
 .widget-area {
 	background-color: var(--box-color);
-	 border-radius: 10px;
+	border-radius: 10px;
 	padding: 20px;
 }
 
-.widget{
-	margin-bottom: 20px ;
+.widget {
+	margin-bottom: 20px;
 }
 
 .widget h2 {
@@ -936,7 +935,7 @@ video {
 		font-size: 18px;
 	}
 
-	.blog-post-thumbnail img{
+	.blog-post-thumbnail img {
 		height: 250px;
 	}
 }
