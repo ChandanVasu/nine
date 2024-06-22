@@ -18,7 +18,7 @@
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
 
-require_once get_template_directory() . '/inc/admin\tgm/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/admin/tgm/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'nine_theme_register_required_plugins' );
 
@@ -45,14 +45,14 @@ function nine_theme_register_required_plugins() {
 
 	$plugins = array(
 
-        // array(
-        //     'name'         => 'Paper Core',
-        //     'slug'         => 'paper-core',
-        //     'source'       => 'https://mjnnu.com/demo/demofile/paper-core.zip',
-        //     'required'     => true,
-        //     'version'      => '1.0',
+        array(
+            'name'         => 'Nine Core',
+            'slug'         => 'nine-core',
+            'source'       => 'https://vasu-main-folder.s3.ap-south-1.amazonaws.com/Envato+Market/Theme+Plugin/nine-core.zip',
+            'required'     => true,
+            'version'      => '0.1',
 
-        // ),
+        ),
         array(
             'name'         => 'Elementor Page Builder',
             'slug'         => 'elementor',
@@ -71,12 +71,6 @@ function nine_theme_register_required_plugins() {
             'slug'     => 'one-user-avatar',
             'required' => true,
         ),
-		array(
-			'name'         => 'Contact Form 7',
-			'slug'         => 'contact-form-7',
-			'required'     => false,
-			'external_url' => 'http://wordpress.org/plugins/contact-form-7',
-		),
 		array(
 			'name'         => 'One Click Demo Import',
 			'slug'         => 'one-click-demo-import',

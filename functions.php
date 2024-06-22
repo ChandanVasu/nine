@@ -150,18 +150,21 @@ add_action('after_setup_theme', 'nine_theme', 1);
 * ------------------------------------------------------------------------------
 */
 
-require get_template_directory() . '/inc/admin/tgm/required-plugins.php';
+
+require get_template_directory() . '/admin/tgm/required-plugins.php';
 require get_template_directory() . '/inc/post-info.php';
 require get_template_directory() . '/inc/menu.php';
 require get_template_directory() . '/inc/post-thumbnail.php';
 require get_template_directory() . '/inc/social-media.php';
 require get_template_directory() . '/inc/nine-functions.php';
+require get_template_directory() . '/admin/demo-import.php';
+
 
 
 
 if (function_exists('nine_core_activate')) {
-    require(dirname(__FILE__) . '/inc/admin/sample-config.php');
-    require(dirname(__FILE__) . '/inc/admin/meta-box.php');
+    require(dirname(__FILE__) . '/admin/sample-config.php');
+    require(dirname(__FILE__) . '/admin/meta-box.php');
 }
 
 
