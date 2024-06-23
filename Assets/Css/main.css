@@ -573,6 +573,10 @@ video {
 	flex-direction: column;
 }
 
+.post-tags {
+	margin-top: 15px;
+}
+
 .post-tags li {
 	background-color: var(--fill-color);
 	border-radius: 10px;
@@ -581,6 +585,15 @@ video {
 	margin-right: 5px;
 	margin-top: 20px;
 	padding: 2px 10px;
+}
+
+@media (max-width: 800px) {
+	.post-tags li {
+
+		margin-top: 0px;
+
+
+	}
 }
 
 .post-tags::before {

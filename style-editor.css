@@ -119,7 +119,7 @@ big {
 blockquote {
 	font-size: 1.8em;
 	line-height: 1.5;
-	margin-bottom: 35px;
+	margin-bottom: 10px;
 	margin-left: 0;
 	margin-right: 0;
 	padding-left: 1.4em;
@@ -2441,6 +2441,18 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 	border-right: none;
 	margin-top: 20px;
 	padding: 10px 40px;
+}
+
+@media(max-width: 800px){
+	.wp-block-quote{
+		padding: 10px 10px;
+	}
+	blockquote cite{
+		margin-top: 10px;
+	}
+	.wp-block-quote p{
+		font-size: 16px;
+	}
 }
 
 .wp-block-quote p {
