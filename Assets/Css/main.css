@@ -47,7 +47,7 @@
 
 @font-face {
 	font-family: 'Poppins';
-	src: url('Assets/Css/fonts/poppins.medium.ttf') format('truetype');
+	src: url('fonts/poppins.medium.ttf') format('truetype');
 }
 
 * {
