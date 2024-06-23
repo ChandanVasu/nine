@@ -574,7 +574,7 @@ video {
 }
 
 .post-tags {
-	margin-top: 15px;
+	margin-top: 15px !important;
 }
 
 .post-tags li {

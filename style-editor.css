@@ -2451,7 +2451,12 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 		margin-top: 10px;
 	}
 	.wp-block-quote p{
-		font-size: 16px;
+		font-size: 16px !important;
+	}
+
+	blockquote::before{
+		left: 0px;
+
 	}
 }
 
@@ -2461,7 +2466,7 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 	font-weight: bold;
 	line-height: inherit;
 	margin: 0;
-	padding-top: 10px;
+	padding-top: 20px;
 	text-align: center;
 }
 
