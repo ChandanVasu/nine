@@ -27,10 +27,6 @@
 <?php
 
 $template_id = nine_get_opt('header_template');
-
-
-
-
 // Function to load the appropriate header template
 function load_header_template($template_id) {
     // Check if the template ID exists and the function is available

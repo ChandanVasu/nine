@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function enqueue_custom_assets() {
     // Enqueue CSS files
-    wp_enqueue_style('custom-style', get_template_directory_uri() . '/main.css');
+    wp_enqueue_style('custom-style', get_template_directory_uri() . '/Assets/Css/main.css');
     wp_enqueue_style('editor-style', get_template_directory_uri() . '/style-editor.css');
     wp_enqueue_style('icon', get_template_directory_uri() . '/Assets/Css/icon.css');
     wp_enqueue_style('video', get_template_directory_uri() . '/Assets/Css/video.css');
