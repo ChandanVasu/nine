@@ -471,6 +471,8 @@ video {
 .post-avatar {
 	border-radius: 50%;
 	margin-right: 10px;
+	height: 40px;
+	width: 40px;
 }
 
 .post-box {

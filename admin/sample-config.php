@@ -80,6 +80,15 @@ Redux::setSection($opt_name, array(
             'options'  => nine_get_posts_id('nine_theme'),
             'placeholder' => esc_html__('Select block', 'nine'),
         ),
+        array(
+            
+            'id'       => 'sticky_hader',
+            'type'     => 'switch', 
+            'title'    => esc_html__('Sticky Hader', 'nine'),
+            'subtitle' => esc_html__('Top Sticky Hader Switch', 'nine'),
+            'default'  => true,
+            
+        )
     ),
 ));
 

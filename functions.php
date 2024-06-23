@@ -21,7 +21,7 @@ function enqueue_custom_assets() {
     // Enqueue JavaScript files
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/Js/main.js');
     wp_enqueue_script('video-script', get_template_directory_uri() . '/Assets/Js/video.js');
-
+    wp_localize_script('custom-script', 'reduxOptions', get_option('nine_theme'));
 
     // If the script relies on jQuery, uncomment the following line
     // wp_enqueue_script('custom-script', get_template_directory_uri() . '/Assets/js/main.js', array('jquery'), false, true);
