@@ -1,3 +1,10 @@
+<?php 
+/**
+ * Index
+ * @package nine
+ */
+?>
+
 <div class='h-1'>
 
     <div class='h-1-content'>

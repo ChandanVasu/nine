@@ -1,4 +1,13 @@
 <?php 
+/**
+ * The archivev template file
+ *
+ * This template is used to display the archive of the website.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package nine
+ */
 get_header(); 
 
 $selected_header = nine_get_opt('archive_select', 'post-one');

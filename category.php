@@ -1,4 +1,14 @@
 <?php 
+/**
+ * The category template file
+ *
+ * This template is used to display the category of the website.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package nine
+ */
+
 get_header(); 
 
 $selected_header = nine_get_opt('category_select', 'post-one');

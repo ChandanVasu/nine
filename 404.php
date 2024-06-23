@@ -1,4 +1,13 @@
 <?php 
+/**
+ * The 404 template file
+ *
+ * This template is used to display the 404 of the website.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package nine
+ */
 get_header(); 
 
 $template_id = nine_get_opt('404_template');

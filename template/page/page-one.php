@@ -1,3 +1,10 @@
+<?php 
+/**
+ * page
+ * @package nine
+ */
+?>
+
 <div class='s-1'>
     <div class='s-1-post'>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

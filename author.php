@@ -1,4 +1,13 @@
 <?php 
+/**
+ * The author template file
+ *
+ * This template is used to display the author of the website.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package nine
+ */
 get_header(); 
 
 $selected_header = nine_get_opt('author_select', 'post-one');

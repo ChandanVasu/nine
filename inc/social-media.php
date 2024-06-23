@@ -1,3 +1,9 @@
+<?php 
+/**
+ * Socail Post Share
+ * @package nine
+ */
+?>
 <?php
 
 function social_media_share_one() {

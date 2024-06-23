@@ -1,3 +1,9 @@
+<?php 
+/**
+ * Hader One
+ * @package nine
+ */
+?>
 <div class='site-main'>
     <header class="nine-h-1">
         <!-- Site Branding (e.g., Logo, Title, Description) -->

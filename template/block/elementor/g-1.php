@@ -1,3 +1,9 @@
+<?php 
+/**
+ * Elementor Template
+ * @package nine
+ */
+?>
 <div class="el-g-1-box">
     <div class="el-g-1-thumbnail">
         <a href="<?php the_permalink(); ?>">

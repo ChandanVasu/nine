@@ -2,6 +2,8 @@
 
 /**
  * Display the main menu.
+ *  
+ * @package nine
  */
 function nine_menu() {
     $menu_name = 'main_menu'; // Replace with your actual theme location name

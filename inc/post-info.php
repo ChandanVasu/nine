@@ -2,7 +2,7 @@
 /**
  * Custom display functions for the theme.
  *
- * @package nine-theme
+ * @package nine
  */
 
 function nine_post_tags() {
