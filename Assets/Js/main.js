@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     var adminBar = document.getElementById('wpadminbar');
-
-    adminBar.addEventListener('mouseenter', function() {
-        adminBar.style.zIndex = '999999999999';
-    });
-
-    adminBar.addEventListener('mouseleave', function() {
-        adminBar.style.zIndex = '';
-    });
+    
+    if (adminBar) {
+        adminBar.addEventListener('mouseenter', function() {
+            adminBar.style.zIndex = '999999999999';
+        });
+    
+        adminBar.addEventListener('mouseleave', function() {
+            adminBar.style.zIndex = '';
+        });
+    }
 
 });
 
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.gallery-dots .dot');
 
     if (!gallery || !galleryItems.length || !dots.length) {
-        console.error('Required elements are missing.');
+        // console.error('Required elements are missing.');
         return;
     }
 
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function closeHamburger() {
     const menu = document.querySelector('.nine-menu-mobile');
+    if (!menu) return;
 
     menu.style.display = 'block'; // Show the menu
     setTimeout(() => {
@@ -52,6 +55,7 @@ function closeHamburger() {
 
 function callHamburger() {
     const menu = document.querySelector('.nine-menu-mobile');
+    if (!menu) return;
 
     menu.classList.remove('visible'); // Remove class to trigger the transition
     setTimeout(() => {
@@ -91,4 +95,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    var websiteData = reduxOptions.sticky_hader;
+
+    if (websiteData ==! 1) {
+        
+        var mainHeader = document.getElementById("main-header");
+        if (mainHeader) {
+            mainHeader.style.position = "relative";
+        }
+
+        var adminBarHeaders = document.querySelectorAll(".admin-bar #main-header");
+        adminBarHeaders.forEach(function(header) {
+            header.style.top = "0";
+        });
+
+        var sidebarTop = document.querySelectorAll("#sidebar");
+        sidebarTop.forEach(function(header) {
+            header.style.top = "20px";
+        });
+
+    }
+
+});
+
 
