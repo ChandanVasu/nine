@@ -2347,7 +2347,7 @@ ul.wp-block-latest-posts li, ul.wp-block-rss li, .widget_recent_entries ul li, .
 }
 
 .wp-block-group {
-	margin-bottom: 35px;
+	/* margin-bottom: 35px; */
 }
 
 .wp-block-group.has-background {
