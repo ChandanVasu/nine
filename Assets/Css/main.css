@@ -85,7 +85,6 @@ video {
 
 #main-header {
 	background-color: var(--header-background-color);
-	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 	position: sticky;
 	top: 0px;
 	z-index: 99;
@@ -94,6 +93,8 @@ video {
 #main-header .site-main {
 	display: block;
 	margin-top: 0px;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
 }
 
 #sidebar {
