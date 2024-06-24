@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-22 17:35+0000\n"
+"POT-Creation-Date: 2024-06-24 15:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "&#9664;"
 msgstr ""
 
-#: comments.php:83
+#: comments.php:90
 msgid "(Edit)"
 msgstr ""
 
@@ -32,7 +32,7 @@ msgstr ""
 msgid "Accent"
 msgstr ""
 
-#: inc/admin/sample-config.php:190 inc/admin/sample-config.php:211
+#: admin/sample-config.php:199 admin/sample-config.php:220
 msgid "Archive Page"
 msgstr ""
 
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Archives:"
 msgstr ""
 
-#: inc/admin/sample-config.php:284 inc/admin/sample-config.php:305
+#: admin/sample-config.php:293 admin/sample-config.php:314
 msgid "Author Page"
 msgstr ""
 
@@ -53,15 +53,15 @@ msgstr ""
 msgid "Author: %s"
 msgstr ""
 
-#: inc/admin/sample-config.php:441
+#: admin/sample-config.php:450
 msgid "Body Background Color"
 msgstr ""
 
-#: inc/admin/sample-config.php:482
+#: admin/sample-config.php:491
 msgid "Box Background Color"
 msgstr ""
 
-#: inc/admin/sample-config.php:237 inc/admin/sample-config.php:258
+#: admin/sample-config.php:246 admin/sample-config.php:267
 msgid "Category Page"
 msgstr ""
 
@@ -70,11 +70,11 @@ msgstr ""
 msgid "Category: %s"
 msgstr ""
 
-#: comments.php:39
+#: comments.php:46
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:16
+#: comments.php:23
 #, php-format
 msgctxt "comments title"
 msgid "%1$s Reply"
@@ -82,51 +82,51 @@ msgid_plural "%1$s Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/admin/sample-config.php:395
+#: admin/sample-config.php:404
 msgid "Copyright text default"
 msgstr ""
 
-#: inc/menu.php:28 inc/menu.php:34
+#: inc/menu.php:30 inc/menu.php:36
 msgid "Create a menu"
 msgstr ""
 
-#: inc/admin/sample-config.php:416
+#: admin/sample-config.php:425
 msgid "Custom 404 template"
 msgstr ""
 
-#: inc/admin/sample-config.php:198
+#: admin/sample-config.php:207
 msgid "Custom Archive template"
 msgstr ""
 
-#: inc/admin/sample-config.php:292
+#: admin/sample-config.php:301
 msgid "Custom Author template"
 msgstr ""
 
-#: inc/admin/sample-config.php:245
+#: admin/sample-config.php:254
 msgid "Custom Category template"
 msgstr ""
 
-#: inc/admin/sample-config.php:396
+#: admin/sample-config.php:405
 msgid "Custom footer text"
 msgstr ""
 
-#: inc/admin/sample-config.php:77
+#: admin/sample-config.php:77
 msgid "Custom Header template"
 msgstr ""
 
-#: inc/admin/meta-box.php:8
+#: admin/meta-box.php:8
 msgid "Custom Metabox"
 msgstr ""
 
-#: inc/admin/sample-config.php:145
+#: admin/sample-config.php:154
 msgid "Custom Page Post template"
 msgstr ""
 
-#: inc/admin/sample-config.php:339
+#: admin/sample-config.php:348
 msgid "Custom Search template"
 msgstr ""
 
-#: inc/admin/sample-config.php:95
+#: admin/sample-config.php:104
 msgid "Custom Single Post template"
 msgstr ""
 
@@ -139,31 +139,31 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: inc/admin/sample-config.php:397
+#: admin/sample-config.php:406
 msgid "Designed by VasuTheme - Newspaper WordPress Theme."
 msgstr ""
 
-#: comments.php:58
+#: comments.php:65
 msgid "Email"
 msgstr ""
 
-#: inc/admin/meta-box.php:16
+#: admin/meta-box.php:16
 msgid "Enter the URL for the video"
 msgstr ""
 
-#: inc/admin/tgm/required-plugins.php:63
+#: admin/tgm/required-plugins.php:63
 msgid "Envato Market"
 msgstr ""
 
-#: inc/admin/sample-config.php:408
+#: admin/sample-config.php:417
 msgid "Error-404"
 msgstr ""
 
-#: inc/admin/sample-config.php:378
+#: admin/sample-config.php:387
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/admin/sample-config.php:386
+#: admin/sample-config.php:395
 msgid "Footer template"
 msgstr ""
 
@@ -171,19 +171,19 @@ msgstr ""
 msgid "Gallery image"
 msgstr ""
 
-#: inc/admin/meta-box.php:23
+#: admin/meta-box.php:23
 msgid "Gallery Images"
 msgstr ""
 
-#: inc/admin/sample-config.php:472
+#: admin/sample-config.php:481
 msgid "Header Background Color"
 msgstr ""
 
-#: inc/admin/sample-config.php:69
+#: admin/sample-config.php:69
 msgid "Header Setting"
 msgstr ""
 
-#: inc/admin/sample-config.php:435
+#: admin/sample-config.php:444
 msgid "Highlight Elements"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "https://vasux.xyz"
 msgstr ""
 
-#: template/home/404.php:11
+#: template/home/404.php:16
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -222,7 +222,7 @@ msgstr ""
 msgid "More pages:"
 msgstr ""
 
-#: comments.php:55
+#: comments.php:62
 msgid "Name"
 msgstr ""
 
@@ -240,39 +240,39 @@ msgid ""
 "use by especially magazine, blog &amp; newspaper for online."
 msgstr ""
 
-#: page.php:48
+#: page.php:49 single.php:51
 msgid "No content found"
 msgstr ""
 
-#: inc/menu.php:34
+#: inc/menu.php:36
 msgid "No menu assigned to this location. "
 msgstr ""
 
-#: inc/menu.php:28
+#: inc/menu.php:30
 msgid "No menu items found. "
 msgstr ""
 
-#: template/archive/post-one.php:45
+#: template/archive/post-one.php:52
 msgid "No posts found."
 msgstr ""
 
-#: inc/admin/tgm/required-plugins.php:70
+#: admin/tgm/required-plugins.php:70
 msgid "One User Avatar | User Profile Picture"
 msgstr ""
 
-#: template/home/404.php:7
+#: template/home/404.php:12
 msgid "Oops! That page can’t be found."
 msgstr ""
 
-#: inc/admin/sample-config.php:137
+#: admin/sample-config.php:146
 msgid "Page"
 msgstr ""
 
-#: inc/admin/sample-config.php:155
+#: admin/sample-config.php:164
 msgid "Page Post"
 msgstr ""
 
-#: inc/admin/sample-config.php:87
+#: admin/sample-config.php:96
 msgid "Post"
 msgstr ""
 
@@ -280,15 +280,15 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: inc/admin/sample-config.php:451
+#: admin/sample-config.php:460
 msgid "Primary Color"
 msgstr ""
 
-#: inc/admin/sample-config.php:461
+#: admin/sample-config.php:470
 msgid "Primary Text Color"
 msgstr ""
 
-#: inc/admin/sample-config.php:331 inc/admin/sample-config.php:352
+#: admin/sample-config.php:340 admin/sample-config.php:361
 msgid "Search Page"
 msgstr ""
 
@@ -297,112 +297,116 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: inc/admin/sample-config.php:81 inc/admin/sample-config.php:99
-#: inc/admin/sample-config.php:149 inc/admin/sample-config.php:206
-#: inc/admin/sample-config.php:253 inc/admin/sample-config.php:300
-#: inc/admin/sample-config.php:347 inc/admin/sample-config.php:390
-#: inc/admin/sample-config.php:420
+#: admin/sample-config.php:81 admin/sample-config.php:108
+#: admin/sample-config.php:158 admin/sample-config.php:215
+#: admin/sample-config.php:262 admin/sample-config.php:309
+#: admin/sample-config.php:356 admin/sample-config.php:399
+#: admin/sample-config.php:429
 msgid "Select block"
 msgstr ""
 
-#: inc/admin/sample-config.php:387
+#: admin/sample-config.php:396
 msgid "Select Custom Footer Template"
 msgstr ""
 
-#: inc/admin/sample-config.php:212
+#: admin/sample-config.php:221
 msgid "Select Post Template For archive Page"
 msgstr ""
 
-#: inc/admin/sample-config.php:306
+#: admin/sample-config.php:315
 msgid "Select Post Template For Author Page"
 msgstr ""
 
-#: inc/admin/sample-config.php:259
+#: admin/sample-config.php:268
 msgid "Select Post Template For Category Page"
 msgstr ""
 
-#: inc/admin/sample-config.php:156
+#: admin/sample-config.php:165
 msgid "Select Post Template For Page Post"
 msgstr ""
 
-#: inc/admin/sample-config.php:353
+#: admin/sample-config.php:362
 msgid "Select Post Template For Search Page"
 msgstr ""
 
-#: inc/admin/sample-config.php:106
+#: admin/sample-config.php:115
 msgid "Select Post Template For Single Post"
 msgstr ""
 
-#: inc/admin/sample-config.php:417
+#: admin/sample-config.php:426
 msgid "Select the template to show in 404."
 msgstr ""
 
-#: inc/admin/sample-config.php:199
+#: admin/sample-config.php:208
 msgid "Select the template to show in Archive Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:293
+#: admin/sample-config.php:302
 msgid "Select the template to show in Author Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:246
+#: admin/sample-config.php:255
 msgid "Select the template to show in Category Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:78
+#: admin/sample-config.php:78
 msgid "Select the template to show in Header."
 msgstr ""
 
-#: inc/admin/sample-config.php:146
+#: admin/sample-config.php:155
 msgid "Select the template to show in Page Post."
 msgstr ""
 
-#: inc/admin/sample-config.php:340
+#: admin/sample-config.php:349
 msgid "Select the template to show in Search Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:96
+#: admin/sample-config.php:105
 msgid "Select the template to show in Single Post."
 msgstr ""
 
-#: inc/admin/sample-config.php:428
+#: admin/sample-config.php:437
 msgid "Settings related to the general appearance of the theme."
 msgstr ""
 
-#: inc/admin/sample-config.php:410
+#: admin/sample-config.php:419
 msgid "Settings related to the theme 404."
 msgstr ""
 
-#: inc/admin/sample-config.php:192
+#: admin/sample-config.php:201
 msgid "Settings related to the theme Archive Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:286
+#: admin/sample-config.php:295
 msgid "Settings related to the theme Author Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:239
+#: admin/sample-config.php:248
 msgid "Settings related to the theme Category Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:380
+#: admin/sample-config.php:389
 msgid "Settings related to the theme footer."
 msgstr ""
 
-#: inc/admin/sample-config.php:71
+#: admin/sample-config.php:71
 msgid "Settings related to the theme Header."
 msgstr ""
 
-#: inc/admin/sample-config.php:333
+#: admin/sample-config.php:342
 msgid "Settings related to the theme Search Page."
 msgstr ""
 
-#: inc/admin/sample-config.php:89 inc/admin/sample-config.php:139
+#: admin/sample-config.php:98 admin/sample-config.php:148
 msgid "Settings related to the theme Single Post."
 msgstr ""
 
-#: inc/admin/sample-config.php:105
+#: admin/sample-config.php:114
 msgid "Single Post"
+msgstr ""
+
+#: admin/sample-config.php:87
+msgid "Sticky Hader"
 msgstr ""
 
 #: inc/nine-functions.php:12
@@ -410,11 +414,15 @@ msgstr ""
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/admin/sample-config.php:17 inc/admin/sample-config.php:18
+#: admin/sample-config.php:17 admin/sample-config.php:18
 msgid "Theme Options"
 msgstr ""
 
-#: inc/admin/sample-config.php:426
+#: admin/sample-config.php:88
+msgid "Top Sticky Hader Switch"
+msgstr ""
+
+#: admin/sample-config.php:435
 msgid "Typography"
 msgstr ""
 
@@ -422,7 +430,7 @@ msgstr ""
 msgid "Updated:"
 msgstr ""
 
-#: inc/admin/meta-box.php:24
+#: admin/meta-box.php:24
 msgid "Upload or add multiple images for the gallery"
 msgstr ""
 
@@ -430,7 +438,7 @@ msgstr ""
 msgid "VasuTheme"
 msgstr ""
 
-#: inc/admin/meta-box.php:15
+#: admin/meta-box.php:15
 msgid "Video URL"
 msgstr ""
 
@@ -443,15 +451,15 @@ msgstr ""
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/admin/sample-config.php:388
+#: admin/sample-config.php:397
 #, php-format
 msgid "You can create the custom template from %1$sblock builder%2$s."
 msgstr ""
 
-#: inc/admin/sample-config.php:79 inc/admin/sample-config.php:97
-#: inc/admin/sample-config.php:147 inc/admin/sample-config.php:201
-#: inc/admin/sample-config.php:248 inc/admin/sample-config.php:295
-#: inc/admin/sample-config.php:342 inc/admin/sample-config.php:418
+#: admin/sample-config.php:79 admin/sample-config.php:106
+#: admin/sample-config.php:156 admin/sample-config.php:210
+#: admin/sample-config.php:257 admin/sample-config.php:304
+#: admin/sample-config.php:351 admin/sample-config.php:427
 #, php-format
 msgid "You can create the custom template from %1$sTemplate Builder%2$s."
 msgstr ""
@@ -460,10 +468,10 @@ msgstr ""
 msgid "Your browser does not support the video tag."
 msgstr ""
 
-#: comments.php:51
+#: comments.php:58
 msgid "Your Comment"
 msgstr ""
 
-#: comments.php:86
+#: comments.php:93
 msgid "Your comment is awaiting moderation."
 msgstr ""
