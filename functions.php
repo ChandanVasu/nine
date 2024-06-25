@@ -101,7 +101,7 @@ if ( ! function_exists( 'nine_theme' ) ) {
 
         register_nav_menus(array(
             'main_menu' => 'Main Menu',
-            'mobile_menu' => 'Mobile Menu',
+            // 'mobile_menu' => 'Mobile Menu',
 
         ));
 
