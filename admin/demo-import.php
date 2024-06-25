@@ -2,7 +2,7 @@
 
 function ocdi_import_files_from_json_url() {
     // URL to JSON file
-    $json_url = 'https://vasu-main-folder.s3.ap-south-1.amazonaws.com/Envato+Market/Nine+Theme/data.json';
+    $json_url = 'https://vasux.site/demo/data.json';
   
     // Fetch JSON data from URL
     $response = wp_remote_get($json_url);
