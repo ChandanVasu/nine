@@ -97,6 +97,14 @@ video {
 	padding: 0px 150px;
 }
 
+
+@media (max-width:1000px){
+	#main-header .site-main {
+	padding: 0px 10px;
+}
+
+}
+
 #sidebar {
 	position: sticky;
 	top: 80px;
@@ -315,6 +323,7 @@ video {
 
 .logo-image img {
 	height: 40px;
+	width: 100px;
 }
 
 .logo-text, .logo-text a {
